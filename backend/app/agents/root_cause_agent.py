@@ -67,3 +67,4 @@ def root_cause_analysis_agent(state: InvestigationState) -> InvestigationState:
     state["root_cause_findings"] = findings
     state["agent_traces"].append(trace)
     return state
+

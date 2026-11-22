@@ -72,3 +72,4 @@ def test_data_and_schema_drift(client, auth_headers):
     assert drift_res["feature_metrics"]["age"]["is_drifted"] is True
     # Schema diff must reflect added column 'loyalty_tier'
     assert "loyalty_tier" in drift_res["schema_diff"]["added_columns"]
+

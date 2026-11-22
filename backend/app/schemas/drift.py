@@ -41,3 +41,4 @@ class DriftOut(BaseModel):
 
     class Config:
         from_attributes = True
+

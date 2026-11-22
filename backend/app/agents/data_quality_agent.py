@@ -61,3 +61,4 @@ def data_quality_agent(state: InvestigationState) -> InvestigationState:
     state["quality_findings"] = findings
     state["agent_traces"].append(trace)
     return state
+

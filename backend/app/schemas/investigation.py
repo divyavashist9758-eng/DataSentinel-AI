@@ -32,3 +32,4 @@ class InvestigationOut(BaseModel):
 
     class Config:
         from_attributes = True
+

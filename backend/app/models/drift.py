@@ -17,3 +17,4 @@ class DriftResult(Base):
     feature_metrics = Column(JSON, nullable=False)  # KS-stat, p-value, PSI, distribution bins
     schema_diff = Column(JSON, nullable=True)  # added, removed, type_changes
     created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+

@@ -57,3 +57,4 @@ class DatabaseConnectionConfig(BaseModel):
     description: Optional[str] = None
     connection_url: str
     query_or_table: str
+

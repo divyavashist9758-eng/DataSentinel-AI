@@ -28,3 +28,4 @@ class AnomalyOut(BaseModel):
 
     class Config:
         from_attributes = True
+

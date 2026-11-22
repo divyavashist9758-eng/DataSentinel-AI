@@ -10,7 +10,7 @@ from app.models.user import User
 from app.schemas.dataset import DatasetOut, DatasetDetailOut
 from app.services.ingestion import IngestionService
 from app.services.profiling_service import ProfilingService
-from app.api.deps import get_current_user, record_audit
+from app.api.deps import get_current_user, require_analyst, record_audit
 
 router = APIRouter(prefix="/datasets", tags=["Datasets"])
 
@@ -20,7 +20,7 @@ def upload_dataset(
     name: Optional[str] = Form(None),
     description: Optional[str] = Form(None),
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_analyst)
 ):
     """Upload and ingest a new CSV, Excel, or JSON dataset."""
     dataset_name = name or file.filename or "uploaded_dataset"
@@ -121,3 +121,4 @@ def delete_dataset(
         user_id=current_user.id
     )
     return None
+

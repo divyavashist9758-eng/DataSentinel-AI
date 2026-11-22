@@ -63,3 +63,4 @@ def get_profiling_history(
         ProfilingResult.dataset_id == dataset_id
     ).order_by(ProfilingResult.created_at.desc()).limit(limit).all()
     return profs
+

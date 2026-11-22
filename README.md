@@ -5,31 +5,38 @@ DataSentinel AI is an enterprise-grade autonomous data observability platform th
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Architecture & Capabilities
 
-1. **Automated Data Ingestion & Storage**:
-   - Ingestion of CSV, Excel (`.xlsx`, `.xls`), and JSON datasets.
-   - Database connection inspection.
-   - SHA-256 integrity validation, MIME verification, and configurable file size limits.
-   - Non-destructive immutable raw storage.
+1. **Security & Cryptographic Hardening**:
+   - Primary password hashing with **Argon2id** (RFC 9106, 64 MiB RAM, 3 iterations, 4 parallelism threads) with seamless backwards compatibility.
+   - Strict stateless JWT Bearer token authentication with cryptographic expiration validation and signature pinning.
+   - Role-Based Access Control (**RBAC**) strictly enforcing permission boundaries for `admin`, `analyst`, and `viewer` roles.
+   - Content signature validation prohibiting disguised executable binaries (ELF, PE, Mach-O, scripts).
+   - Strict path traversal prevention ensuring uploads and reads remain confined within authorized storage zones.
 
-2. **Deterministic Data Profiling & Transparent Scoring**:
-   - Automated profiling of dataset dimensions, missing values, duplicates, and cardinality.
-   - Quantile distribution and data type inference.
+2. **Automated Data Ingestion & Immutability Guarantee**:
+   - Secure ingestion of CSV, Excel (`.xlsx`, `.xls`), and JSON datasets.
+   - SHA-256 cryptographic digest calculation and MIME type verification.
+   - Configurable upload quota (100MB default).
+   - **Zero In-Place Overwrites**: Original raw user datasets are strictly immutable.
+
+3. **Deterministic Data Profiling & Transparent Scoring**:
+   - Automated profiling of dataset dimensions, missing cells, duplicate rows, and column cardinalities.
+   - Quantile distribution analysis and type inference.
    - Transparent, documented 100-point Data Quality Score based on penalized defect weights.
 
-3. **Machine Learning Anomaly & Outlier Engine**:
+4. **Machine Learning Anomaly & Outlier Engine**:
    - Multi-dimensional anomaly detection using Scikit-Learn **Isolation Forest**.
    - Statistical outlier detection via Interquartile Range (IQR) fences and Z-score distributions.
-   - Baseline dataset comparison with anomaly scoring breakdowns.
+   - Feature importance rankings and anomalous record inspector.
 
-4. **Schema Drift & Data Drift Monitoring**:
+5. **Schema Drift & Data Drift Monitoring**:
    - Structural mutation tracking: added/removed columns, type conversions, nullability shifts.
-   - Continuous feature drift detection via two-sample **Kolmogorov-Smirnov (KS) test** and **Population Stability Index (PSI)**.
+   - Continuous feature drift detection via two-sample **Kolmogorov-Smirnov (KS) test** and **Population Stability Index (PSI)** with quantile binning.
    - Versioned schema evolution history.
 
-5. **LangGraph Multi-Agent Investigation System**:
-   - Multi-step stateful investigation orchestrated through 6 specialized agents:
+6. **LangGraph Multi-Agent Investigation System**:
+   - Stateful multi-agent workflow orchestrated through 6 specialized agents in a LangGraph `StateGraph`:
      - **Data Quality Agent**: Identifies quality score degradations and metric threshold failures.
      - **Anomaly Investigation Agent**: Analyzes multi-dimensional outlier clusters.
      - **Schema Analysis Agent**: Analyzes structural mutations against baseline schemas.
@@ -38,28 +45,29 @@ DataSentinel AI is an enterprise-grade autonomous data observability platform th
      - **Report Generation Agent**: Formulates comprehensive markdown and JSON investigation dossiers.
    - High-fidelity deterministic local fallback when external LLM credentials are not provided.
 
-6. **RAG Knowledge System**:
+7. **RAG Incident Knowledge Retrieval**:
    - Vector similarity search over past postmortems, proven remediation runbooks, and enterprise quality standards.
-   - Transparent citation tracking (`source: incident-104`).
+   - Transparent citation tracking (`Source: kb-rem-05`, `Source: kb-inc-104`).
 
-7. **Human-in-the-Loop Remediation Engine**:
-   - Preview proposed transformations (imputation, deduplication, type casting, outlier bounding).
-   - Human approval/rejection lifecycle.
-   - **Zero In-Place Overwrites**: Transformations run strictly on cloned copies, generating versioned datasets with before/after audit records.
+8. **Human-in-the-Loop Remediation Engine**:
+   - Preview proposed transformations with side-by-side Before/After record diffs.
+   - Human review lifecycle (Pending, Approved, Rejected, Executed).
+   - Transformations run strictly on cloned copies, generating versioned datasets with before/after audit records.
 
-8. **Enterprise Management & Modern UI**:
-   - Incident lifecycle management with severity scoring (CRITICAL, HIGH, MEDIUM, LOW).
-   - Modern React + TypeScript + Vite + Tailwind CSS dashboard with interactive Recharts visualizations.
+9. **Enterprise Management & Modern UI**:
+   - Incident lifecycle management with severity scoring (CRITICAL, HIGH, MEDIUM, LOW) and timeline audit.
+   - Modern React 18 + TypeScript + Vite + Tailwind CSS dashboard with interactive Recharts visualizations.
+   - Authenticated PDF (ReportLab) and CSV dossier exports.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Backend**: Python 3.12+, FastAPI, SQLAlchemy, Pydantic, PostgreSQL (Docker/Prod) / SQLite (Local dev), Uvicorn.
+- **Backend**: Python 3.12+, FastAPI, SQLAlchemy, Pydantic v2, Argon2id (`argon2-cffi`), PostgreSQL 16 (Docker/Prod) / SQLite (Local dev), Uvicorn.
 - **Machine Learning**: Scikit-learn, Pandas, NumPy, SciPy (KS-test, PSI, Isolation Forest).
-- **Agentic AI & GenAI**: LangGraph, LangChain, Groq API (`llama-3.3-70b-versatile`), ChromaDB / Vector Search.
+- **Agentic AI & GenAI**: LangGraph, LangChain, Groq API (`llama-3.3-70b-versatile`), TF-IDF / Vector Search.
 - **Frontend**: React 18, TypeScript, Vite, Tailwind CSS, Recharts, Lucide React, Axios.
-- **Testing**: Pytest, HTTPX test client.
+- **Testing**: Pytest (17 automated unit, integration, and security tests).
 
 ---
 
@@ -68,8 +76,9 @@ DataSentinel AI is an enterprise-grade autonomous data observability platform th
 ### 1. Prerequisites
 - Python 3.12+
 - Node.js 18+ and npm
+- (Optional) Docker and Docker Compose
 
-### 2. Backend Setup
+### 2. Local Backend Setup
 ```bash
 # Clone or open repository
 cd "DataSentinel AI"
@@ -83,21 +92,38 @@ pip install -r backend/requirements.txt
 # Run backend server
 python backend/run.py
 ```
-Backend API will be running at `http://localhost:8000`
-Interactive Swagger Documentation: `http://localhost:8000/docs`
+- Backend API: `http://localhost:8000`
+- Swagger Interactive Documentation: `http://localhost:8000/docs`
 
-### 3. Frontend Setup
+### 3. Local Frontend Setup
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Frontend will be running at `http://localhost:5173`
+- Frontend Application: `http://localhost:5173`
 
-### 4. Running Automated Tests
+### 4. Docker & Containerized Production Deployment
 ```bash
-pytest backend/tests -v
+docker compose up -d --build
 ```
+- Frontend Application: `http://localhost:3000`
+- Backend REST API: `http://localhost:8000`
+
+### 5. Running Automated Tests
+```bash
+# Run complete test suite (17 tests: auth, ingestion, ML, drift, LangGraph, RAG, security)
+python -m pytest backend/tests -v
+
+# Run independent end-to-end verification harness
+python backend/tests/verify_all.py
+```
+
+### 6. Sample Data Walkthrough
+Pre-seeded synthetic business data is available in `backend/sample_data/`:
+1. `customers_clean.csv`: Benchmark baseline dataset (clean records, proper types, zero nulls).
+2. `customers_drifted.csv`: Drifted customer data (distribution shifts, null breaches, categorical anomalies).
+3. `transactions_anomalous.json`: Transaction records with multi-dimensional numerical outliers.
 
 ---
 
@@ -107,22 +133,22 @@ DataSentinel AI/
 ├── backend/
 │   ├── app/
 │   │   ├── api/v1/         # FastAPI REST endpoints
-│   │   ├── core/           # Database, security, exceptions, logging
+│   │   ├── core/           # Database, security (Argon2id, JWT), exceptions, logging
 │   │   ├── models/         # SQLAlchemy database models
 │   │   ├── schemas/        # Pydantic data schemas
-│   │   ├── services/       # Business logic (ingestion, ML, drift, RAG, etc.)
-│   │   ├── agents/         # LangGraph multi-agent investigation system
-│   │   ├── config.py       # Pydantic settings
+│   │   ├── services/       # Ingestion, profiling, ML, drift, RAG, remediation, reports
+│   │   ├── agents/         # LangGraph 6-agent multi-agent investigation system
+│   │   ├── config.py       # Pydantic settings & environment validation
 │   │   └── main.py         # FastAPI application entrypoint
 │   ├── data/               # Local data storage (uploads, remediated, RAG)
 │   ├── sample_data/        # Realistic synthetic testing datasets
-│   ├── tests/              # Automated pytest test suite
+│   ├── tests/              # 17 automated tests (unit, integration, and security)
 │   ├── requirements.txt    # Python requirements
-│   ├── Dockerfile          # Backend container file
+│   ├── Dockerfile          # Backend production container
 │   └── run.py              # Local server launcher
 ├── frontend/
 │   ├── src/
-│   │   ├── components/     # UI widgets, layout, navigation, charts
+│   │   ├── components/     # UI widgets, layout, navigation, charts, modals
 │   │   ├── pages/          # 12 SaaS enterprise pages
 │   │   ├── services/       # Axios API client
 │   │   ├── types/          # TypeScript definitions
@@ -130,19 +156,14 @@ DataSentinel AI/
 │   │   └── main.tsx
 │   ├── package.json
 │   ├── vite.config.ts
-│   └── tailwind.config.js
+│   ├── tailwind.config.js
+│   ├── nginx.conf          # Production Nginx reverse-proxy and SPA routing
+│   └── Dockerfile          # Frontend production container
 ├── docker-compose.yml
+├── .dockerignore
 ├── .env.example
 ├── ARCHITECTURE.md
 ├── TASKS.md
 ├── PROGRESS.md
 └── DEVELOPMENT_LOG.md
 ```
-
----
-
-## 🔒 Security & Data Integrity
-- Passwords hashed using cryptographically secure salted SHA-256.
-- Strict MIME type and SHA-256 verification on dataset uploads.
-- Original user files are never modified in-place; all remediations generate cloned, versioned datasets.
-- Full audit log recorded for every user action and remediation execution.

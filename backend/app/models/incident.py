@@ -24,3 +24,4 @@ class Incident(Base):
     dataset = relationship("Dataset", back_populates="incidents")
     investigations = relationship("Investigation", back_populates="incident", cascade="all, delete-orphan")
     remediations = relationship("RemediationSuggestion", back_populates="incident")
+

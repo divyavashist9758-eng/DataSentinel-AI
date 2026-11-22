@@ -19,3 +19,4 @@ def setup_logging(debug: bool = True) -> logging.Logger:
     return logger
 
 logger = setup_logging()
+

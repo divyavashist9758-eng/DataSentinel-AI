@@ -45,3 +45,4 @@ class ProfilingOut(BaseModel):
 
     class Config:
         from_attributes = True
+

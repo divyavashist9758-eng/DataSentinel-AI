@@ -1,22 +1,30 @@
 # DataSentinel AI: Development Log
 
 ## 2026-11-22 - Session Initial Setup & Architecture
+- Initialized core architecture, dual-mode database engine (PostgreSQL/SQLite), Pydantic v2 schemas, and JWT security.
+- Implemented real ML algorithms: Isolation Forest, KS-test, and PSI.
+- Built LangGraph 6-agent investigation workflow with Groq LLM integration and deterministic intelligent local fallback.
+- Implemented Human-in-the-Loop remediation engine ensuring original raw datasets remain completely immutable.
 
-### Environment Analysis
-- Detected Python 3.13.14, Node v26.13.0, npm 11.20.0, Git 2.53.0.
-- Docker command is not available in current host path (`docker: command not found`).
-- Decision: Provide complete Dockerfiles and `docker-compose.yml` for containerized deployment, while implementing dual-mode database support (PostgreSQL for containerized/production setups, with zero-configuration SQLite support for immediate out-of-the-box local developer execution and unit testing).
-- Disk Space: Detected low free space on C:\ (~60MB), while D:\ has ~136GB. Cleaned `C:\Users\divya\AppData\Local\pip\cache` to immediately recover 1.39 GB of free space.
-- Pip flag: Using `--no-cache-dir` on pip installations to preserve host storage.
+## 2026-11-22 - Final Independent Verification Audit (12/12 PASS)
+- Developed and executed an automated end-to-end audit harness (`backend/tests/verify_all.py`).
+- Verified 12/12 functional modules with zero mock responses.
 
-### Architectural Decisions & Bug Fixes
-1. **JSON Serialization in SQLAlchemy**:
-   - Encountered `TypeError: Object of type bool_ is not JSON serializable` and `Timestamp is not JSON serializable` when inserting NumPy booleans/floats and Pandas Timestamps into JSON columns.
-   - Solution: Implemented `default_json_serializer` and configured `json_serializer=json_dumps_custom` on SQLAlchemy's `create_engine`, ensuring automatic, transparent coercion of all NumPy scalar types, arrays, and Pandas Timestamps to valid native Python JSON objects.
-2. **Multi-Format Remediation Copying**:
-   - Identified that remediated copies must match the source file format (JSON files saved as JSON, CSV as CSV, Excel as Excel) so subsequent automated profiling parses properly without MIME mismatches.
-   - Updated `IngestionService.load_dataframe` to smartly inspect both explicit type and file extension.
-3. **Cross-Dataset Baseline Drift Comparison**:
-   - Enhanced `DriftEngine.run_drift_analysis` to allow comparing two versions within a single dataset, as well as comparing an incoming dataset version against a separate baseline benchmark dataset.
-4. **Test Suite Verification**:
-   - 9 out of 9 pytest suites passed with 100% success rate across Authentication, Ingestion, Profiling, Isolation Forest, KS-Test & PSI Drift, LangGraph Multi-Agent, RAG, Incidents, and Human-in-the-Loop Remediation.
+## 2026-11-22 - Production Security Hardening & Acceptance
+1. **Argon2id Password Hashing**:
+   - Integrated `argon2-cffi` 25.1.0 using standard RFC 9106 parameters (64 MiB RAM, 3 iterations, 4 parallelism threads).
+   - Maintained constant-time backwards compatibility for legacy `salt$sha256` hashes.
+2. **Access Control & RBAC**:
+   - Replaced dev fallback with strict `AuthenticationException` on unauthenticated requests.
+   - Enforced role requirements: `require_analyst` on dataset upload, incident creation/update, and remediation execution; `require_admin` on deletions.
+3. **File Ingestion & Path Traversal Guards**:
+   - Implemented `IngestionService.sanitize_filename` and `os.path.commonpath` confinement.
+   - Implemented `validate_content_signature` to inspect magic bytes, rejecting disguised executable binaries (ELF, PE, Mach-O, scripts).
+4. **CORS & Environment Hardening**:
+   - Removed wildcard `*` from `CORS_ORIGINS`.
+   - Added `SECRET_KEY` strength validator in production mode.
+   - Updated ReportLab PDF and CSV download flows to use authenticated blob transfer.
+5. **Testing & Quality Assurance**:
+   - 17 of 17 Pytest automated unit, integration, and security tests passed.
+   - Frontend production build (`tsc && vite build`) passed with zero errors.
+   - Docker configuration verified (`docker-compose.yml`, Dockerfiles, Nginx SPA proxy).

@@ -139,3 +139,4 @@ def export_investigation_csv(
         media_type="text/csv",
         headers={"Content-Disposition": f"attachment; filename=investigation_traces_{inv.id}.csv"}
     )
+

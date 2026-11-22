@@ -120,3 +120,4 @@ class ReportGenerator:
             ])
             
         return output.getvalue()
+

@@ -34,3 +34,4 @@ class InvestigationState(TypedDict):
     # Execution traces for each agent
     agent_traces: List[AgentTraceData]
     errors: List[str]
+

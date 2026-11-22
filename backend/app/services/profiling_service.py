@@ -185,3 +185,4 @@ class ProfilingService:
         db.refresh(profiling_record)
         logger.info(f"Profiling completed for dataset {dataset_id}. Quality score: {profiling_record.overall_score}/100")
         return profiling_record
+

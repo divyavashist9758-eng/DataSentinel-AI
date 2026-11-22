@@ -71,3 +71,4 @@ def report_generation_agent(state: InvestigationState) -> InvestigationState:
     state["final_report"] = findings
     state["agent_traces"].append(trace)
     return state
+

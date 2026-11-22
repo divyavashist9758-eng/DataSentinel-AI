@@ -47,6 +47,12 @@ data/remediated/*
 !data/remediated/.gitkeep
 data/rag_store/*
 !data/rag_store/.gitkeep
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+backend/data/remediated/*
+!backend/data/remediated/.gitkeep
+backend/data/rag_store/*
+!backend/data/rag_store/.gitkeep
 *.db
 *.sqlite
 *.sqlite3
@@ -54,3 +60,4 @@ data/rag_store/*
 # OS
 .DS_Store
 Thumbs.db
+

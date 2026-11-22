@@ -59,3 +59,4 @@ def get_latest_anomalies(
         # Run automatically if none exists yet
         res = MLEngine.run_anomaly_analysis(db=db, dataset_id=dataset_id)
     return res
+

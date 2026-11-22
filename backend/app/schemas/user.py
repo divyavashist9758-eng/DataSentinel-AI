@@ -33,3 +33,4 @@ class TokenPayload(BaseModel):
     sub: Optional[str] = None
     user_id: Optional[int] = None
     role: Optional[str] = None
+

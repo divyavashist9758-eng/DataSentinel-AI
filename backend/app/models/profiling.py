@@ -20,3 +20,4 @@ class ProfilingResult(Base):
 
     # Relationships
     dataset = relationship("Dataset", back_populates="profiling_results")
+

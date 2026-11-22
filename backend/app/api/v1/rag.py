@@ -37,3 +37,4 @@ def index_knowledge_entry(
     entry_dict = entry.model_dump()
     rag_engine.add_knowledge_entry(entry_dict)
     return {"message": "Knowledge entry indexed successfully", "entry": entry_dict}
+

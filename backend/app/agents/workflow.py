@@ -45,3 +45,4 @@ def run_investigation(initial_state: InvestigationState) -> InvestigationState:
         logger.error(f"LangGraph investigation error: {str(e)}")
         initial_state["errors"].append(str(e))
         return initial_state
+

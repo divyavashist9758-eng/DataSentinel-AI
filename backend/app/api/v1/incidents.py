@@ -8,7 +8,7 @@ from app.models.incident import Incident
 from app.models.dataset import Dataset
 from app.models.user import User
 from app.schemas.incident import IncidentCreate, IncidentUpdate, IncidentOut
-from app.api.deps import get_current_user, record_audit
+from app.api.deps import get_current_user, require_analyst, record_audit
 
 router = APIRouter(prefix="/incidents", tags=["Incident Management"])
 
@@ -16,7 +16,7 @@ router = APIRouter(prefix="/incidents", tags=["Incident Management"])
 def create_incident(
     req: IncidentCreate,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_analyst)
 ):
     """Create a new data quality or schema degradation incident."""
     dataset = db.query(Dataset).filter(Dataset.id == req.dataset_id).first()
@@ -103,7 +103,7 @@ def update_incident(
     incident_id: int,
     req: IncidentUpdate,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_analyst)
 ):
     """Update incident status, severity, root cause, or resolution notes."""
     inc = db.query(Incident).filter(Incident.id == incident_id).first()
@@ -152,3 +152,4 @@ def update_incident(
     d = IncidentOut.model_validate(inc).model_dump()
     d["dataset_name"] = inc.dataset.name if inc.dataset else None
     return d
+

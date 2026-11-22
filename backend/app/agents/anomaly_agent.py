@@ -48,3 +48,4 @@ def anomaly_investigation_agent(state: InvestigationState) -> InvestigationState
     state["anomaly_findings"] = findings
     state["agent_traces"].append(trace)
     return state
+

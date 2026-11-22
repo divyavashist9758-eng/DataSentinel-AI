@@ -8,11 +8,11 @@ DataSentinel AI is an enterprise-grade autonomous data quality, observability, a
                   │                 React Frontend                │
                   │   (Vite + TypeScript + Tailwind + Recharts)   │
                   └───────────────────────┬───────────────────────┘
-                                          │ REST / JSON
+                                          │ REST / JSON (JWT Bearer)
                                           ▼
                   ┌───────────────────────────────────────────────┐
                   │             FastAPI Backend Core              │
-                  │   (Auth, Ingestion, Profiling, Orchestration) │
+                  │   (Argon2id, RBAC, Ingestion, Profiling)      │
                   └───────┬──────────────┬──────────────┬─────────┘
                           │              │              │
         ┌─────────────────┴─┐     ┌──────┴──────┐     ┌─┴────────────────┐
@@ -20,9 +20,9 @@ DataSentinel AI is an enterprise-grade autonomous data quality, observability, a
 ┌───────────────┐   ┌───────────────┐   ┌─────────────────┐   ┌───────────────┐
 │ Machine Learn.│   │  LangGraph    │   │ RAG Incident    │   │ Non-Destruct. │
 │  - IsolationF.│   │  Multi-Agent  │   │ Knowledge Store │   │ Remediation   │
-│  - KS-Test    │   │  - Quality    │   │ (Chroma/FAISS + │   │  - Preview    │
-│  - PSI Drift  │   │  - Anomaly    │   │  MiniLM Vector) │   │  - Approvals  │
-│  - Outlier IQR│   │  - Schema     │   └─────────────────┘   │  - New Copy   │
+│  - KS-Test    │   │  - Quality    │   │ (Vector/Cosine  │   │  - Preview    │
+│  - PSI Drift  │   │  - Anomaly    │   │  Similarity)    │   │  - Approvals  │
+│  - Outlier IQR│   │  - Schema     │   └─────────────────┘   │  - Cloned V2  │
 └───────────────┘   │  - Root Cause │                         └───────────────┘
                     │  - Remediation│
                     │  - Report Gen │
@@ -31,69 +31,59 @@ DataSentinel AI is an enterprise-grade autonomous data quality, observability, a
           ┌───────────────┴───────────────┐
           ▼                               ▼
 ┌──────────────────┐            ┌──────────────────┐
-│ PostgreSQL /     │            │ Storage / Data   │
+│ PostgreSQL 16 /  │            │ Storage / Data   │
 │ SQLite (Local)   │            │ (Raw & Cleaned)  │
 └──────────────────┘            └──────────────────┘
 ```
 
 ## 2. Core Modules Architecture
 
-### Module A: Data Ingestion & Storage
-- **File Handlers**: CSV, Excel (`.xlsx`, `.xls`), JSON, and Database connection strings.
-- **Validation**: Enforces MIME types, file size ceilings (configurable default 100MB), schema validity, and safe storage hashing.
-- **Dataset Versioning**: Tracks dataset versions (`v1`, `v2`, `v3`) to monitor drift and schema evolution over time.
+### Module A: Security & Access Control Layer
+- **Cryptographic Hashing**: **Argon2id** (RFC 9106, 64 MiB RAM, 3 iterations, 4 parallelism threads) using `argon2-cffi` with backwards-compatible legacy salted SHA-256 support.
+- **Authentication**: Stateless JSON Web Tokens (**JWT**) with `HS256` signature verification, cryptographic `exp` checks, and subject validation.
+- **Role-Based Access Control (RBAC)**: Enforces role boundaries:
+  - `admin`: Full system administrative control.
+  - `analyst`: Can upload datasets, trigger investigations, update incidents, and execute approved remediations.
+  - `viewer`: Read-only access to datasets, profiles, metrics, and reports; prohibited from state-modifying actions.
+- **Path Traversal & Storage Confinement**: Safe filename sanitization and `os.path.commonpath` confinement preventing arbitrary file access.
+- **Magic Bytes Validation**: Rejects disguised executable binaries (Linux ELF, Windows PE, Mach-O, shell scripts).
 
-### Module B: Automated Data Profiling & Quality Scoring
+### Module B: Data Ingestion & Storage
+- **File Handlers**: CSV, Excel (`.xlsx`, `.xls`), and JSON.
+- **Validation**: Enforces MIME types, file size ceilings (100MB default), and SHA-256 integrity verification.
+- **Dataset Versioning & Immutability**: All original raw files are strictly immutable; version 1 remains intact permanently.
+
+### Module C: Automated Data Profiling & Quality Scoring
 - Deterministic profiling computing row/column count, duplicate row count, null percentages, data types, distinct value cardinalities, and numerical quantiles.
-- **Quality Score Engine**: A transparent 100-point scoring algorithm penalizing:
-  - Nulls ($P_{null}$): weighted by column critical thresholds.
-  - Duplicates ($P_{dup}$): proportional to duplicate row ratio.
-  - Data Type Inconsistencies ($P_{type}$).
-  - Outlier density ($P_{outlier}$).
+- **Quality Score Engine**: A transparent 100-point scoring algorithm penalizing missingness, duplicates, type inconsistencies, and outlier density:
   $$Q = \max(0, 100 - (w_1 \cdot P_{null} + w_2 \cdot P_{dup} + w_3 \cdot P_{type} + w_4 \cdot P_{outlier}))$$
 
-### Module C: Machine Learning & Anomaly Detection
-- **Isolation Forest**: Multidimensional unsupervised anomaly detection with configurable contamination rates to pinpoint anomalous rows and multi-feature oddities.
-- **Statistical Outlier Detection**: IQR (Interquartile Range) fences ($Q1 - 1.5\text{IQR}$, $Q3 + 1.5\text{IQR}$) and Z-score testing ($|z| > 3.0$) for numerical features.
+### Module D: Machine Learning & Anomaly Detection
+- **Isolation Forest**: Multi-dimensional unsupervised anomaly detection to pinpoint anomalous rows and feature oddities.
+- **Statistical Outlier Detection**: IQR fences and Z-score distributions.
 - **Data Drift Detection**:
-  - Two-sample Kolmogorov-Smirnov (KS) test for continuous numerical distributions ($p$-value threshold $< 0.05$).
-  - Population Stability Index (PSI) with standard binning ($\text{PSI} > 0.25$ indicates significant drift).
-  - Categorical chi-square / frequency deviation detection.
+  - Two-sample Kolmogorov-Smirnov (KS) test ($p$-value threshold $< 0.05$).
+  - Population Stability Index (PSI) with standard quantile binning ($\text{PSI} > 0.25$ indicates significant drift).
+- **Schema Drift Comparator**: Detects added/removed columns, type conversions, nullability shifts, and unexpected categories.
 
-### Module D: Schema Drift Detection
-- Compares column structure across dataset versions or historical schema baselines:
-  - Added columns
-  - Removed columns
-  - Data type changes (e.g. `INTEGER` to `VARCHAR`)
-  - Nullability threshold breaches (previously non-null columns now having missing data)
-  - New unexpected categorical categories.
+### Module E: LangGraph Multi-Agent Investigation System
+- Stateful `StateGraph` workflow orchestrating 6 specialized agents:
+  1. Data Quality Agent
+  2. Anomaly Investigation Agent
+  3. Schema Analysis Agent
+  4. Root Cause Analysis Agent
+  5. Remediation Agent
+  6. Report Generation Agent
+- External LLM provider: Groq API (`llama-3.3-70b-versatile`) with seamless deterministic intelligent local fallback.
 
-### Module E: LangGraph Agentic AI Investigation System
-- Multi-step stateful investigation workflow orchestrated with LangGraph:
-  1. **Data Quality Agent**: Analyzes overall quality metrics and flags SLA breaches.
-  2. **Anomaly Investigation Agent**: Digs into flagged anomalous rows and feature outliers.
-  3. **Schema Analysis Agent**: Analyzes structural mutations against baseline schemas.
-  4. **Root Cause Analysis Agent**: Correlates quality, anomaly, and schema findings with temporal patterns to hypothesize root causes.
-  5. **Remediation Agent**: Synthesizes actionable, non-destructive remediation transformations.
-  6. **Report Generation Agent**: Synthesizes the end-to-end investigation dossier with confidence scores and executive summaries.
-- **LLM Fallback & Resilience**: Dynamically connects to Groq API (or OpenAI/compatible), with robust structured fallback heuristics ensuring complete trace generation even without external API credentials.
+### Module F: RAG Incident Knowledge Retrieval
+- Semantic search across pre-seeded industry rules, historical postmortems, and remediation playbooks with traceable source citations.
 
-### Module F: RAG Knowledge System
-- Indexes past incident postmortems, proven remediation recipes, and company data quality guidelines.
-- Vector store with cosine similarity retrieval over semantic embeddings.
-- Injects verified historical incident precedents into investigation prompts to provide exact citations (`source: incident-104`).
+### Module G: Human-in-the-Loop Remediation Engine
+- Side-by-side Before/After preview diff on real records with estimated score improvement.
+- Reviewer approval/rejection lifecycle with audit attribution.
+- **Safe Execution**: Clones the dataset into a new versioned copy, executes the transformation, and triggers automated post-remediation profiling.
 
-### Module G: AI Remediation Engine (Human-in-the-Loop)
-- Generates precise code/data transformation proposals for:
-  - Missing value imputation (mean, median, mode, KNN, constant, drop)
-  - Duplicate deduplication strategies
-  - Type casting & invalid data cleansing
-  - Outlier clipping or isolation
-- **Zero In-Place Overwrites**: Original raw dataset remains strictly read-only.
-- **Approval Workflow**: Pending $\rightarrow$ Approved/Rejected $\rightarrow$ Executed.
-- Generates a newly versioned remediated dataset with before-and-after diff metrics and complete audit logging.
-
-### Module H & I: Incidents, Analytics & Reporting
-- Comprehensive lifecycle tracking (OPEN, INVESTIGATING, REMEDIATED, RESOLVED).
-- Severity calculation (CRITICAL, HIGH, MEDIUM, LOW) based on impacted records and business criticality.
-- PDF and CSV reporting export engine.
+### Module H: PDF & CSV Report Generation
+- ReportLab-powered PDF dossier generator with executive synthesis and agent traces.
+- CSV trace export for programmatic auditing and reporting.

@@ -24,3 +24,4 @@ api_router.include_router(incidents_router)
 api_router.include_router(reports_router)
 
 __all__ = ["api_router"]
+

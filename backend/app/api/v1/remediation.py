@@ -12,7 +12,7 @@ from app.schemas.remediation import (
     RemediationActionRequest,
 )
 from app.services.remediation_engine import RemediationEngine
-from app.api.deps import get_current_user, record_audit
+from app.api.deps import get_current_user, require_analyst, record_audit
 
 router = APIRouter(prefix="/remediation", tags=["Remediation Approval Center"])
 
@@ -44,9 +44,9 @@ def review_remediation(
     remediation_id: int,
     req: RemediationActionRequest,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_analyst)
 ):
-    """Human-in-the-loop review: Approve or Reject a remediation recommendation."""
+    """Human-in-the-loop review: Approve or Reject a remediation recommendation (Analyst/Admin only)."""
     rem = db.query(RemediationSuggestion).filter(RemediationSuggestion.id == remediation_id).first()
     if not rem:
         raise EntityNotFoundException("Remediation suggestion", remediation_id)
@@ -77,9 +77,9 @@ def review_remediation(
 def execute_remediation(
     remediation_id: int,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_analyst)
 ):
-    """Execute approved remediation on a newly created copy of the dataset. Original is never modified."""
+    """Execute approved remediation on a newly created copy of the dataset (Analyst/Admin only). Original is never modified."""
     rem = db.query(RemediationSuggestion).filter(RemediationSuggestion.id == remediation_id).first()
     if not rem:
         raise EntityNotFoundException("Remediation suggestion", remediation_id)
@@ -87,3 +87,4 @@ def execute_remediation(
     RemediationEngine.execute_approved_remediation(db, remediation_id, current_user.username)
     db.refresh(rem)
     return rem
+

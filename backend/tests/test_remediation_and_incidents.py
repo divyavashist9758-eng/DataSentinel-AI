@@ -90,3 +90,4 @@ def test_incident_lifecycle_and_remediation_workflow(client, auth_headers):
     csv_resp = client.get(f"/api/v1/reports/export/investigation/{inv_id}/csv", headers=auth_headers)
     assert csv_resp.status_code == 200
     assert "Investigation ID" in csv_resp.text
+

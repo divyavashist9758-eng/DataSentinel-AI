@@ -38,3 +38,4 @@ def test_duplicate_registration_fails(client):
     resp = client.post("/api/v1/auth/register", json=reg_payload)
     assert resp.status_code == 422
     assert "already registered" in resp.json()["detail"]
+

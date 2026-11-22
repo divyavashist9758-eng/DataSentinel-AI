@@ -40,3 +40,4 @@ def test_langgraph_multi_agent_investigation(client, auth_headers):
     assert "Root Cause Analysis Agent" in agent_names
     assert "Remediation Agent" in agent_names
     assert "Report Generation Agent" in agent_names
+

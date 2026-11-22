@@ -63,3 +63,4 @@ def schema_analysis_agent(state: InvestigationState) -> InvestigationState:
     state["schema_findings"] = findings
     state["agent_traces"].append(trace)
     return state
+

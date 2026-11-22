@@ -33,3 +33,4 @@ class RemediationSuggestion(Base):
     dataset = relationship("Dataset", back_populates="remediations")
     incident = relationship("Incident", back_populates="remediations")
     investigation = relationship("Investigation", back_populates="remediations")
+

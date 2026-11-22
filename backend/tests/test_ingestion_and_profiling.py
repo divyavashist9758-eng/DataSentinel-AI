@@ -39,3 +39,4 @@ def test_dataset_upload_and_profiling(client, auth_headers):
     assert prof["quality_breakdown"]["completeness_score"] == 100.0
     assert "age" in prof["column_metrics"]
     assert prof["column_metrics"]["age"]["inferred_type"] == "numeric"
+

@@ -20,3 +20,4 @@ class AnomalyResult(Base):
 
     # Relationships
     dataset = relationship("Dataset", back_populates="anomalies")
+

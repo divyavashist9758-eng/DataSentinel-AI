@@ -167,3 +167,4 @@ def list_dataset_investigations(
     return db.query(Investigation).filter(
         Investigation.dataset_id == dataset_id
     ).order_by(Investigation.created_at.desc()).all()
+

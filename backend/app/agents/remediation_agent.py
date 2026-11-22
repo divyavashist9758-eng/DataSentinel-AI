@@ -103,3 +103,4 @@ def remediation_agent(state: InvestigationState) -> InvestigationState:
     state["remediation_proposals"] = proposals
     state["agent_traces"].append(trace)
     return state
+
