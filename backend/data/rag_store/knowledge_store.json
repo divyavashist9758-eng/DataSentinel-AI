@@ -1,0 +1,44 @@
+[
+  {
+    "id": "kb-dq-01",
+    "category": "data_quality_rule",
+    "title": "Missing Primary Keys and Critical Identifiers",
+    "content": "Columns marked as identifiers or foreign keys must maintain zero null rates. Null spikes in customer_id or transaction_id usually indicate upstream ETL ingestion partition failures or partial API timeouts.",
+    "recommended_action": "Investigate upstream webhook retry queues or apply partition re-ingestion."
+  },
+  {
+    "id": "kb-dq-02",
+    "category": "data_quality_rule",
+    "title": "Duplicate Record Frequency Bounds",
+    "content": "Duplicate rows exceeding 0.5% in transactional datasets typically stem from retry logic without idempotency keys in streaming ingestion.",
+    "recommended_action": "Apply deduplication keeping latest timestamp and enforce idempotency keying."
+  },
+  {
+    "id": "kb-inc-104",
+    "category": "previous_incident",
+    "title": "Payment Amount 100x Scale Outlier Incident",
+    "content": "Incident-104: A currency conversion module failure caused currency values to be ingested in cents rather than dollars for foreign accounts, causing extreme Isolation Forest anomalies in amount column.",
+    "recommended_action": "Apply unit normalization and clip extreme values using IQR fence bounds."
+  },
+  {
+    "id": "kb-inc-108",
+    "category": "previous_incident",
+    "title": "Unexpected Category Injection from Partner API",
+    "content": "Incident-108: Partner service updated their status enum to include 'PENDING_VERIFICATION' without publishing a schema change notice, breaking downstream strict enum validators.",
+    "recommended_action": "Update schema enum contract and map unexpected categories to fallback 'OTHER' category."
+  },
+  {
+    "id": "kb-drift-03",
+    "category": "historical_investigation",
+    "title": "Age Demographic PSI Drift Post Marketing Campaign",
+    "content": "PSI score jumped to 0.42 on age and income columns due to a new TikTok acquisition campaign targeting younger demographics. Data was valid but model retraining was required.",
+    "recommended_action": "Validate upstream cohort shift; mark drift as verified business change and trigger model recalibration."
+  },
+  {
+    "id": "kb-rem-05",
+    "category": "approved_remediation",
+    "title": "Median Imputation for Skewed Numerical Features",
+    "content": "Approved standard remediation for missing continuous data with skewness > 1.0: Replace missing entries with median rather than mean to preserve robust distribution properties.",
+    "recommended_action": "Apply median imputation with audit tracking of modified cell count."
+  }
+]

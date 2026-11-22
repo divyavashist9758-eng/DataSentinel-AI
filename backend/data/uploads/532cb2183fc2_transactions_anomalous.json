@@ -1,0 +1,2158 @@
+[
+  {
+    "transaction_id": "TX-5000",
+    "customer_id": "CUST-1000",
+    "merchant": "Delta Airlines",
+    "amount": 15.42,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5001",
+    "customer_id": "CUST-1001",
+    "merchant": "Amazon",
+    "amount": 89.04,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5002",
+    "customer_id": "CUST-1002",
+    "merchant": "Delta Airlines",
+    "amount": 9.29,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5003",
+    "customer_id": "CUST-1003",
+    "merchant": "Apple",
+    "amount": 16.93,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5004",
+    "customer_id": "CUST-1004",
+    "merchant": "Apple",
+    "amount": 66.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5005",
+    "customer_id": "CUST-1005",
+    "merchant": "Delta Airlines",
+    "amount": 182.79,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5006",
+    "customer_id": "CUST-1006",
+    "merchant": "Starbucks",
+    "amount": 65.14,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5007",
+    "customer_id": "CUST-1007",
+    "merchant": "Target",
+    "amount": 15.71,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5008",
+    "customer_id": "CUST-1008",
+    "merchant": "Uber",
+    "amount": 149.61,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5009",
+    "customer_id": "CUST-1009",
+    "merchant": "Delta Airlines",
+    "amount": 8.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5010",
+    "customer_id": "CUST-1010",
+    "merchant": "Amazon",
+    "amount": 63.88,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5011",
+    "customer_id": "CUST-1011",
+    "merchant": "Target",
+    "amount": 86.15,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5012",
+    "customer_id": "CUST-1012",
+    "merchant": "Walmart",
+    "amount": 25.05,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5013",
+    "customer_id": "CUST-1013",
+    "merchant": "Apple",
+    "amount": 41.4,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5014",
+    "customer_id": "CUST-1014",
+    "merchant": "Walmart",
+    "amount": 1052.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5015",
+    "customer_id": "CUST-1015",
+    "merchant": "Walmart",
+    "amount": 5.41,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5016",
+    "customer_id": "CUST-1016",
+    "merchant": "Delta Airlines",
+    "amount": 121.74,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5017",
+    "customer_id": "CUST-1017",
+    "merchant": "Starbucks",
+    "amount": 54.8,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5018",
+    "customer_id": "CUST-1018",
+    "merchant": "Apple",
+    "amount": 7.85,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5019",
+    "customer_id": "CUST-1019",
+    "merchant": "Uber",
+    "amount": 47.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5020",
+    "customer_id": "CUST-1020",
+    "merchant": "Uber",
+    "amount": 163.63,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5021",
+    "customer_id": "CUST-1021",
+    "merchant": "Amazon",
+    "amount": 158.96,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5022",
+    "customer_id": "CUST-1022",
+    "merchant": "Target",
+    "amount": 37.94,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5023",
+    "customer_id": "CUST-1023",
+    "merchant": "Amazon",
+    "amount": 9.05,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5024",
+    "customer_id": "CUST-1024",
+    "merchant": "Delta Airlines",
+    "amount": 55.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5025",
+    "customer_id": "CUST-1025",
+    "merchant": "Walmart",
+    "amount": 12.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5026",
+    "customer_id": "CUST-1026",
+    "merchant": "Target",
+    "amount": 67.43,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5027",
+    "customer_id": "CUST-1027",
+    "merchant": "Amazon",
+    "amount": 38.2,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5028",
+    "customer_id": "CUST-1028",
+    "merchant": "Target",
+    "amount": 20.7,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5029",
+    "customer_id": "CUST-1029",
+    "merchant": "Starbucks",
+    "amount": 69.41,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5030",
+    "customer_id": "CUST-1030",
+    "merchant": "Walmart",
+    "amount": 20.11,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5031",
+    "customer_id": "CUST-1031",
+    "merchant": "Amazon",
+    "amount": 7.45,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5032",
+    "customer_id": "CUST-1032",
+    "merchant": "Apple",
+    "amount": 19.98,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5033",
+    "customer_id": "CUST-1033",
+    "merchant": "Uber",
+    "amount": 17.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5034",
+    "customer_id": "CUST-1034",
+    "merchant": "Walmart",
+    "amount": 47.13,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5035",
+    "customer_id": "CUST-1035",
+    "merchant": "Uber",
+    "amount": 43.71,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5036",
+    "customer_id": "CUST-1036",
+    "merchant": "Apple",
+    "amount": 14.48,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5037",
+    "customer_id": "CUST-1037",
+    "merchant": "Walmart",
+    "amount": 58.73,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5038",
+    "customer_id": "CUST-1038",
+    "merchant": "Apple",
+    "amount": 53.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5039",
+    "customer_id": "CUST-1039",
+    "merchant": "Delta Airlines",
+    "amount": 29.53,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5040",
+    "customer_id": "CUST-1040",
+    "merchant": "Delta Airlines",
+    "amount": 40.91,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5041",
+    "customer_id": "CUST-1041",
+    "merchant": "Amazon",
+    "amount": 8.68,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5042",
+    "customer_id": "CUST-1042",
+    "merchant": "Target",
+    "amount": 5058.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5043",
+    "customer_id": "CUST-1043",
+    "merchant": "Walmart",
+    "amount": 60.21,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5044",
+    "customer_id": "CUST-1044",
+    "merchant": "Target",
+    "amount": 26.24,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5045",
+    "customer_id": "CUST-1045",
+    "merchant": "Starbucks",
+    "amount": 101.06,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5046",
+    "customer_id": "CUST-1046",
+    "merchant": "Amazon",
+    "amount": 114.68,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5047",
+    "customer_id": "CUST-1047",
+    "merchant": "Walmart",
+    "amount": 9.08,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5048",
+    "customer_id": "CUST-1048",
+    "merchant": "Uber",
+    "amount": 30.9,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5049",
+    "customer_id": "CUST-1049",
+    "merchant": "Amazon",
+    "amount": 33.63,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5050",
+    "customer_id": "CUST-1050",
+    "merchant": "Amazon",
+    "amount": 20.22,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5051",
+    "customer_id": "CUST-1051",
+    "merchant": "Apple",
+    "amount": 75.34,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5052",
+    "customer_id": "CUST-1052",
+    "merchant": "Walmart",
+    "amount": 21.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5053",
+    "customer_id": "CUST-1053",
+    "merchant": "Delta Airlines",
+    "amount": 48.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5054",
+    "customer_id": "CUST-1054",
+    "merchant": "Amazon",
+    "amount": 67.2,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5055",
+    "customer_id": "CUST-1055",
+    "merchant": "Delta Airlines",
+    "amount": 10.62,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5056",
+    "customer_id": "CUST-1056",
+    "merchant": "Target",
+    "amount": 70.96,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5057",
+    "customer_id": "CUST-1057",
+    "merchant": "Starbucks",
+    "amount": 44.21,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5058",
+    "customer_id": "CUST-1058",
+    "merchant": "Amazon",
+    "amount": 41.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5059",
+    "customer_id": "CUST-1059",
+    "merchant": "Delta Airlines",
+    "amount": 25.51,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5060",
+    "customer_id": "CUST-1060",
+    "merchant": "Starbucks",
+    "amount": 38.04,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5061",
+    "customer_id": "CUST-1061",
+    "merchant": "Uber",
+    "amount": 10.59,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5062",
+    "customer_id": "CUST-1062",
+    "merchant": "Starbucks",
+    "amount": 81.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5063",
+    "customer_id": "CUST-1063",
+    "merchant": "Target",
+    "amount": 129.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5064",
+    "customer_id": "CUST-1064",
+    "merchant": "Starbucks",
+    "amount": 14.78,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5065",
+    "customer_id": "CUST-1065",
+    "merchant": "Starbucks",
+    "amount": 69.99,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5066",
+    "customer_id": "CUST-1066",
+    "merchant": "Apple",
+    "amount": 7.65,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5067",
+    "customer_id": "CUST-1067",
+    "merchant": "Amazon",
+    "amount": 9.83,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5068",
+    "customer_id": "CUST-1068",
+    "merchant": "Walmart",
+    "amount": 53.92,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5069",
+    "customer_id": "CUST-1069",
+    "merchant": "Amazon",
+    "amount": 25.88,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5070",
+    "customer_id": "CUST-1070",
+    "merchant": "Uber",
+    "amount": 15.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5071",
+    "customer_id": "CUST-1071",
+    "merchant": "Walmart",
+    "amount": 28.47,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5072",
+    "customer_id": "CUST-1072",
+    "merchant": "Walmart",
+    "amount": 73.03,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5073",
+    "customer_id": "CUST-1073",
+    "merchant": "Amazon",
+    "amount": 81.76,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5074",
+    "customer_id": "CUST-1074",
+    "merchant": "Target",
+    "amount": 20.15,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5075",
+    "customer_id": "CUST-1075",
+    "merchant": "Walmart",
+    "amount": 58.12,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5076",
+    "customer_id": "CUST-1076",
+    "merchant": "Uber",
+    "amount": 66.19,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5077",
+    "customer_id": "CUST-1077",
+    "merchant": "Delta Airlines",
+    "amount": 28.9,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5078",
+    "customer_id": "CUST-1078",
+    "merchant": "Target",
+    "amount": 40.87,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5079",
+    "customer_id": "CUST-1079",
+    "merchant": "Apple",
+    "amount": 38.47,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5080",
+    "customer_id": "CUST-1080",
+    "merchant": "Uber",
+    "amount": 8.23,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5081",
+    "customer_id": "CUST-1081",
+    "merchant": "Amazon",
+    "amount": 111.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5082",
+    "customer_id": "CUST-1082",
+    "merchant": "Delta Airlines",
+    "amount": 18.3,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5083",
+    "customer_id": "CUST-1083",
+    "merchant": "Uber",
+    "amount": 31.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5084",
+    "customer_id": "CUST-1084",
+    "merchant": "Walmart",
+    "amount": 16.57,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5085",
+    "customer_id": "CUST-1085",
+    "merchant": "Starbucks",
+    "amount": 35.71,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5086",
+    "customer_id": "CUST-1086",
+    "merchant": "Starbucks",
+    "amount": 9.27,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5087",
+    "customer_id": "CUST-1087",
+    "merchant": "Starbucks",
+    "amount": 28.79,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5088",
+    "customer_id": "CUST-1088",
+    "merchant": "Target",
+    "amount": 6299.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5089",
+    "customer_id": "CUST-1089",
+    "merchant": "Walmart",
+    "amount": 57.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5090",
+    "customer_id": "CUST-1090",
+    "merchant": "Uber",
+    "amount": 30.37,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5091",
+    "customer_id": "CUST-1091",
+    "merchant": "Delta Airlines",
+    "amount": 95.11,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5092",
+    "customer_id": "CUST-1092",
+    "merchant": "Target",
+    "amount": 28.65,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5093",
+    "customer_id": "CUST-1093",
+    "merchant": "Uber",
+    "amount": 17.31,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5094",
+    "customer_id": "CUST-1094",
+    "merchant": "Uber",
+    "amount": 38.14,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5095",
+    "customer_id": "CUST-1095",
+    "merchant": "Delta Airlines",
+    "amount": 22.39,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5096",
+    "customer_id": "CUST-1096",
+    "merchant": "Uber",
+    "amount": 63.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5097",
+    "customer_id": "CUST-1097",
+    "merchant": "Amazon",
+    "amount": 43.22,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5098",
+    "customer_id": "CUST-1098",
+    "merchant": "Amazon",
+    "amount": 79.35,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5099",
+    "customer_id": "CUST-1099",
+    "merchant": "Apple",
+    "amount": -66.75,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5100",
+    "customer_id": "CUST-1100",
+    "merchant": "Delta Airlines",
+    "amount": 21.42,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5101",
+    "customer_id": "CUST-1101",
+    "merchant": "Target",
+    "amount": -23.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5102",
+    "customer_id": "CUST-1102",
+    "merchant": "Walmart",
+    "amount": 27.58,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5103",
+    "customer_id": "CUST-1103",
+    "merchant": "Amazon",
+    "amount": 11.28,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5104",
+    "customer_id": "CUST-1104",
+    "merchant": "Amazon",
+    "amount": 51.78,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5105",
+    "customer_id": "CUST-1105",
+    "merchant": "Target",
+    "amount": 17.73,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5106",
+    "customer_id": "CUST-1106",
+    "merchant": "Target",
+    "amount": 11.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5107",
+    "customer_id": "CUST-1107",
+    "merchant": "Apple",
+    "amount": 47.08,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5108",
+    "customer_id": "CUST-1108",
+    "merchant": "Apple",
+    "amount": 18.14,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5109",
+    "customer_id": "CUST-1109",
+    "merchant": "Uber",
+    "amount": 7.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5110",
+    "customer_id": "CUST-1110",
+    "merchant": "Walmart",
+    "amount": 52.95,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5111",
+    "customer_id": "CUST-1111",
+    "merchant": "Amazon",
+    "amount": 67.81,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5112",
+    "customer_id": "CUST-1112",
+    "merchant": "Starbucks",
+    "amount": 21.66,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5113",
+    "customer_id": "CUST-1113",
+    "merchant": "Apple",
+    "amount": 38.94,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5114",
+    "customer_id": "CUST-1114",
+    "merchant": "Walmart",
+    "amount": 25.98,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5115",
+    "customer_id": "CUST-1115",
+    "merchant": "Target",
+    "amount": 56.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5116",
+    "customer_id": "CUST-1116",
+    "merchant": "Starbucks",
+    "amount": 8.4,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5117",
+    "customer_id": "CUST-1117",
+    "merchant": "Starbucks",
+    "amount": 78.11,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5118",
+    "customer_id": "CUST-1118",
+    "merchant": "Target",
+    "amount": 55.86,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5119",
+    "customer_id": "CUST-1119",
+    "merchant": "Walmart",
+    "amount": 20.03,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5120",
+    "customer_id": "CUST-1120",
+    "merchant": "Uber",
+    "amount": 65.77,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5121",
+    "customer_id": "CUST-1121",
+    "merchant": "Starbucks",
+    "amount": 25.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5122",
+    "customer_id": "CUST-1122",
+    "merchant": "Apple",
+    "amount": 79.46,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5123",
+    "customer_id": "CUST-1123",
+    "merchant": "Uber",
+    "amount": 21.34,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5124",
+    "customer_id": "CUST-1124",
+    "merchant": "Delta Airlines",
+    "amount": 5.18,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5125",
+    "customer_id": "CUST-1125",
+    "merchant": "Starbucks",
+    "amount": 21.23,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5126",
+    "customer_id": "CUST-1126",
+    "merchant": "Uber",
+    "amount": 90.75,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5127",
+    "customer_id": "CUST-1127",
+    "merchant": "Amazon",
+    "amount": 124.62,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5128",
+    "customer_id": "CUST-1128",
+    "merchant": "Apple",
+    "amount": 17.62,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5129",
+    "customer_id": "CUST-1129",
+    "merchant": "Target",
+    "amount": 110.11,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5130",
+    "customer_id": "CUST-1130",
+    "merchant": "Target",
+    "amount": 36.03,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5131",
+    "customer_id": "CUST-1131",
+    "merchant": "Walmart",
+    "amount": 16.08,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5132",
+    "customer_id": "CUST-1132",
+    "merchant": "Uber",
+    "amount": 92.53,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5133",
+    "customer_id": "CUST-1133",
+    "merchant": "Amazon",
+    "amount": 12.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5134",
+    "customer_id": "CUST-1134",
+    "merchant": "Walmart",
+    "amount": 17.57,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5135",
+    "customer_id": "CUST-1135",
+    "merchant": "Apple",
+    "amount": 45.26,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5136",
+    "customer_id": "CUST-1136",
+    "merchant": "Starbucks",
+    "amount": 8.53,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5137",
+    "customer_id": "CUST-1137",
+    "merchant": "Starbucks",
+    "amount": 66.62,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5138",
+    "customer_id": "CUST-1138",
+    "merchant": "Apple",
+    "amount": 45.79,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5139",
+    "customer_id": "CUST-1139",
+    "merchant": "Uber",
+    "amount": 74.5,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5140",
+    "customer_id": "CUST-1140",
+    "merchant": "Apple",
+    "amount": 40.9,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5141",
+    "customer_id": "CUST-1141",
+    "merchant": "Uber",
+    "amount": 79.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5142",
+    "customer_id": "CUST-1142",
+    "merchant": "Target",
+    "amount": 5.19,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5143",
+    "customer_id": "CUST-1143",
+    "merchant": "Starbucks",
+    "amount": 126.94,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5144",
+    "customer_id": "CUST-1144",
+    "merchant": "Target",
+    "amount": 54.14,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5145",
+    "customer_id": "CUST-1145",
+    "merchant": "Apple",
+    "amount": 134.53,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5146",
+    "customer_id": "CUST-1146",
+    "merchant": "Uber",
+    "amount": 103.73,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5147",
+    "customer_id": "CUST-1147",
+    "merchant": "Uber",
+    "amount": 11.94,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5148",
+    "customer_id": "CUST-1148",
+    "merchant": "Uber",
+    "amount": 10.41,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5149",
+    "customer_id": "CUST-1149",
+    "merchant": "Target",
+    "amount": 50.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5150",
+    "customer_id": "CUST-1000",
+    "merchant": "Delta Airlines",
+    "amount": 34.18,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5151",
+    "customer_id": "CUST-1001",
+    "merchant": "Amazon",
+    "amount": 101.25,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5152",
+    "customer_id": "CUST-1002",
+    "merchant": "Amazon",
+    "amount": 8.46,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5153",
+    "customer_id": "CUST-1003",
+    "merchant": "Delta Airlines",
+    "amount": 378.51,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5154",
+    "customer_id": "CUST-1004",
+    "merchant": "Apple",
+    "amount": 20.25,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5155",
+    "customer_id": "CUST-1005",
+    "merchant": "Walmart",
+    "amount": 37.87,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5156",
+    "customer_id": "CUST-1006",
+    "merchant": "Delta Airlines",
+    "amount": 907.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5157",
+    "customer_id": "CUST-1007",
+    "merchant": "Delta Airlines",
+    "amount": 153.23,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5158",
+    "customer_id": "CUST-1008",
+    "merchant": "Starbucks",
+    "amount": 86.59,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5159",
+    "customer_id": "CUST-1009",
+    "merchant": "Delta Airlines",
+    "amount": 116.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5160",
+    "customer_id": "CUST-1010",
+    "merchant": "Amazon",
+    "amount": 20.21,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5161",
+    "customer_id": "CUST-1011",
+    "merchant": "Amazon",
+    "amount": 46.03,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5162",
+    "customer_id": "CUST-1012",
+    "merchant": "Target",
+    "amount": 13.06,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5163",
+    "customer_id": "CUST-1013",
+    "merchant": "Delta Airlines",
+    "amount": 166.75,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5164",
+    "customer_id": "CUST-1014",
+    "merchant": "Walmart",
+    "amount": 111.28,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5165",
+    "customer_id": "CUST-1015",
+    "merchant": "Walmart",
+    "amount": 38.04,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5166",
+    "customer_id": "CUST-1016",
+    "merchant": "Apple",
+    "amount": 100.9,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5167",
+    "customer_id": "CUST-1017",
+    "merchant": "Uber",
+    "amount": 20.24,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5168",
+    "customer_id": "CUST-1018",
+    "merchant": "Apple",
+    "amount": 96.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5169",
+    "customer_id": "CUST-1019",
+    "merchant": "Walmart",
+    "amount": 7.3,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5170",
+    "customer_id": "CUST-1020",
+    "merchant": "Target",
+    "amount": 30.28,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5171",
+    "customer_id": "CUST-1021",
+    "merchant": "Walmart",
+    "amount": 65.07,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5172",
+    "customer_id": "CUST-1022",
+    "merchant": "Apple",
+    "amount": 21.88,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5173",
+    "customer_id": "CUST-1023",
+    "merchant": "Uber",
+    "amount": 7.53,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5174",
+    "customer_id": "CUST-1024",
+    "merchant": "Uber",
+    "amount": 29.99,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5175",
+    "customer_id": "CUST-1025",
+    "merchant": "Apple",
+    "amount": 36.47,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5176",
+    "customer_id": "CUST-1026",
+    "merchant": "Target",
+    "amount": 19.43,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5177",
+    "customer_id": "CUST-1027",
+    "merchant": "Target",
+    "amount": 98.48,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5178",
+    "customer_id": "CUST-1028",
+    "merchant": "Amazon",
+    "amount": 132.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5179",
+    "customer_id": "CUST-1029",
+    "merchant": "Walmart",
+    "amount": 90.54,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5180",
+    "customer_id": "CUST-1030",
+    "merchant": "Uber",
+    "amount": 28.77,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5181",
+    "customer_id": "CUST-1031",
+    "merchant": "Uber",
+    "amount": 21.28,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5182",
+    "customer_id": "CUST-1032",
+    "merchant": "Amazon",
+    "amount": 10.07,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5183",
+    "customer_id": "CUST-1033",
+    "merchant": "Apple",
+    "amount": 33.35,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5184",
+    "customer_id": "CUST-1034",
+    "merchant": "Amazon",
+    "amount": 18.23,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5185",
+    "customer_id": "CUST-1035",
+    "merchant": "Delta Airlines",
+    "amount": 21.88,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5186",
+    "customer_id": "CUST-1036",
+    "merchant": "Starbucks",
+    "amount": 12.21,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5187",
+    "customer_id": "CUST-1037",
+    "merchant": "Uber",
+    "amount": 7.65,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5188",
+    "customer_id": "CUST-1038",
+    "merchant": "Starbucks",
+    "amount": 49.48,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5189",
+    "customer_id": "CUST-1039",
+    "merchant": "Starbucks",
+    "amount": 39.5,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5190",
+    "customer_id": "CUST-1040",
+    "merchant": "Delta Airlines",
+    "amount": 81.69,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5191",
+    "customer_id": "CUST-1041",
+    "merchant": "Amazon",
+    "amount": 30.01,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5192",
+    "customer_id": "CUST-1042",
+    "merchant": "Apple",
+    "amount": 42.44,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5193",
+    "customer_id": "CUST-1043",
+    "merchant": "Uber",
+    "amount": 71.92,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5194",
+    "customer_id": "CUST-1044",
+    "merchant": "Walmart",
+    "amount": 7.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5195",
+    "customer_id": "CUST-1045",
+    "merchant": "Starbucks",
+    "amount": 76.43,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5196",
+    "customer_id": "CUST-1046",
+    "merchant": "Amazon",
+    "amount": 36.98,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5197",
+    "customer_id": "CUST-1047",
+    "merchant": "Amazon",
+    "amount": 17.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5198",
+    "customer_id": "CUST-1048",
+    "merchant": "Walmart",
+    "amount": 128.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5199",
+    "customer_id": "CUST-1049",
+    "merchant": "Starbucks",
+    "amount": 60.67,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5200",
+    "customer_id": "CUST-1050",
+    "merchant": "Delta Airlines",
+    "amount": 77.46,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5201",
+    "customer_id": "CUST-1051",
+    "merchant": "Uber",
+    "amount": 171.44,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5202",
+    "customer_id": "CUST-1052",
+    "merchant": "Walmart",
+    "amount": 66.97,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5203",
+    "customer_id": "CUST-1053",
+    "merchant": "Uber",
+    "amount": 80.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5204",
+    "customer_id": "CUST-1054",
+    "merchant": "Uber",
+    "amount": 37.8,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5205",
+    "customer_id": "CUST-1055",
+    "merchant": "Target",
+    "amount": 152.39,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5206",
+    "customer_id": "CUST-1056",
+    "merchant": "Uber",
+    "amount": 9.2,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5207",
+    "customer_id": "CUST-1057",
+    "merchant": "Apple",
+    "amount": 22.57,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5208",
+    "customer_id": "CUST-1058",
+    "merchant": "Uber",
+    "amount": 110.51,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5209",
+    "customer_id": "CUST-1059",
+    "merchant": "Uber",
+    "amount": 27.26,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5210",
+    "customer_id": "CUST-1060",
+    "merchant": "Walmart",
+    "amount": 48.44,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5211",
+    "customer_id": "CUST-1061",
+    "merchant": "Apple",
+    "amount": 20.34,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5212",
+    "customer_id": "CUST-1062",
+    "merchant": "Target",
+    "amount": 11580.0,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5213",
+    "customer_id": "CUST-1063",
+    "merchant": "Amazon",
+    "amount": 62.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5214",
+    "customer_id": "CUST-1064",
+    "merchant": "Uber",
+    "amount": 9.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5215",
+    "customer_id": "CUST-1065",
+    "merchant": "Amazon",
+    "amount": 23.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5216",
+    "customer_id": "CUST-1066",
+    "merchant": "Delta Airlines",
+    "amount": 29.23,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5217",
+    "customer_id": "CUST-1067",
+    "merchant": "Target",
+    "amount": 36.87,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5218",
+    "customer_id": "CUST-1068",
+    "merchant": "Walmart",
+    "amount": 8.35,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5219",
+    "customer_id": "CUST-1069",
+    "merchant": "Uber",
+    "amount": 30.45,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5220",
+    "customer_id": "CUST-1070",
+    "merchant": "Delta Airlines",
+    "amount": 112.57,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5221",
+    "customer_id": "CUST-1071",
+    "merchant": "Apple",
+    "amount": 46.51,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5222",
+    "customer_id": "CUST-1072",
+    "merchant": "Walmart",
+    "amount": 22.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5223",
+    "customer_id": "CUST-1073",
+    "merchant": "Starbucks",
+    "amount": 64.84,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5224",
+    "customer_id": "CUST-1074",
+    "merchant": "Amazon",
+    "amount": 113.15,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5225",
+    "customer_id": "CUST-1075",
+    "merchant": "Delta Airlines",
+    "amount": 8.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5226",
+    "customer_id": "CUST-1076",
+    "merchant": "Walmart",
+    "amount": 97.8,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5227",
+    "customer_id": "CUST-1077",
+    "merchant": "Delta Airlines",
+    "amount": 8.64,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5228",
+    "customer_id": "CUST-1078",
+    "merchant": "Amazon",
+    "amount": 15.08,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5229",
+    "customer_id": "CUST-1079",
+    "merchant": "Delta Airlines",
+    "amount": 27.45,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5230",
+    "customer_id": "CUST-1080",
+    "merchant": "Uber",
+    "amount": 21.46,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5231",
+    "customer_id": "CUST-1081",
+    "merchant": "Amazon",
+    "amount": 147.63,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5232",
+    "customer_id": "CUST-1082",
+    "merchant": "Starbucks",
+    "amount": 30.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5233",
+    "customer_id": "CUST-1083",
+    "merchant": "Delta Airlines",
+    "amount": 48.54,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5234",
+    "customer_id": "CUST-1084",
+    "merchant": "Walmart",
+    "amount": 22.93,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5235",
+    "customer_id": "CUST-1085",
+    "merchant": "Starbucks",
+    "amount": 30.67,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5236",
+    "customer_id": "CUST-1086",
+    "merchant": "Uber",
+    "amount": 13.97,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5237",
+    "customer_id": "CUST-1087",
+    "merchant": "Walmart",
+    "amount": 70.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5238",
+    "customer_id": "CUST-1088",
+    "merchant": "Target",
+    "amount": 6.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5239",
+    "customer_id": "CUST-1089",
+    "merchant": "Amazon",
+    "amount": 15.37,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5240",
+    "customer_id": "CUST-1090",
+    "merchant": "Delta Airlines",
+    "amount": 39.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5241",
+    "customer_id": "CUST-1091",
+    "merchant": "Walmart",
+    "amount": 134.07,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5242",
+    "customer_id": "CUST-1092",
+    "merchant": "Starbucks",
+    "amount": 129.17,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5243",
+    "customer_id": "CUST-1093",
+    "merchant": "Target",
+    "amount": 24.96,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5244",
+    "customer_id": "CUST-1094",
+    "merchant": "Starbucks",
+    "amount": 37.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5245",
+    "customer_id": "CUST-1095",
+    "merchant": "Apple",
+    "amount": 37.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5246",
+    "customer_id": "CUST-1096",
+    "merchant": "Apple",
+    "amount": 124.67,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5247",
+    "customer_id": "CUST-1097",
+    "merchant": "Delta Airlines",
+    "amount": 68.46,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5248",
+    "customer_id": "CUST-1098",
+    "merchant": "Amazon",
+    "amount": 106.95,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5249",
+    "customer_id": "CUST-1099",
+    "merchant": "Uber",
+    "amount": 10.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5250",
+    "customer_id": "CUST-1100",
+    "merchant": "Uber",
+    "amount": 22.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5251",
+    "customer_id": "CUST-1101",
+    "merchant": "Walmart",
+    "amount": 34.56,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5252",
+    "customer_id": "CUST-1102",
+    "merchant": "Apple",
+    "amount": 15.02,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5253",
+    "customer_id": "CUST-1103",
+    "merchant": "Target",
+    "amount": 49.6,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5254",
+    "customer_id": "CUST-1104",
+    "merchant": "Starbucks",
+    "amount": 18.7,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5255",
+    "customer_id": "CUST-1105",
+    "merchant": "Delta Airlines",
+    "amount": 24.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5256",
+    "customer_id": "CUST-1106",
+    "merchant": "Target",
+    "amount": 77.86,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5257",
+    "customer_id": "CUST-1107",
+    "merchant": "Starbucks",
+    "amount": 26.31,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5258",
+    "customer_id": "CUST-1108",
+    "merchant": "Walmart",
+    "amount": 29.21,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5259",
+    "customer_id": "CUST-1109",
+    "merchant": "Apple",
+    "amount": 7.7,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5260",
+    "customer_id": "CUST-1110",
+    "merchant": "Target",
+    "amount": 15.91,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5261",
+    "customer_id": "CUST-1111",
+    "merchant": "Delta Airlines",
+    "amount": 26.48,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5262",
+    "customer_id": "CUST-1112",
+    "merchant": "Target",
+    "amount": 26.47,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5263",
+    "customer_id": "CUST-1113",
+    "merchant": "Starbucks",
+    "amount": 39.09,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5264",
+    "customer_id": "CUST-1114",
+    "merchant": "Walmart",
+    "amount": 28.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5265",
+    "customer_id": "CUST-1115",
+    "merchant": "Target",
+    "amount": 95.45,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5266",
+    "customer_id": "CUST-1116",
+    "merchant": "Starbucks",
+    "amount": 15.62,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5267",
+    "customer_id": "CUST-1117",
+    "merchant": "Target",
+    "amount": 99.61,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5268",
+    "customer_id": "CUST-1118",
+    "merchant": "Starbucks",
+    "amount": 6.82,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5269",
+    "customer_id": "CUST-1119",
+    "merchant": "Amazon",
+    "amount": 26.67,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5270",
+    "customer_id": "CUST-1120",
+    "merchant": "Amazon",
+    "amount": 58.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5271",
+    "customer_id": "CUST-1121",
+    "merchant": "Uber",
+    "amount": 22.39,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5272",
+    "customer_id": "CUST-1122",
+    "merchant": "Apple",
+    "amount": 37.25,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5273",
+    "customer_id": "CUST-1123",
+    "merchant": "Uber",
+    "amount": 11.2,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5274",
+    "customer_id": "CUST-1124",
+    "merchant": "Starbucks",
+    "amount": 31.55,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5275",
+    "customer_id": "CUST-1125",
+    "merchant": "Apple",
+    "amount": 22.17,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5276",
+    "customer_id": "CUST-1126",
+    "merchant": "Apple",
+    "amount": 26.71,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5277",
+    "customer_id": "CUST-1127",
+    "merchant": "Walmart",
+    "amount": 21.7,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5278",
+    "customer_id": "CUST-1128",
+    "merchant": "Uber",
+    "amount": 45.45,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5279",
+    "customer_id": "CUST-1129",
+    "merchant": "Walmart",
+    "amount": 55.3,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5280",
+    "customer_id": "CUST-1130",
+    "merchant": "Target",
+    "amount": 8.38,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5281",
+    "customer_id": "CUST-1131",
+    "merchant": "Amazon",
+    "amount": 69.84,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5282",
+    "customer_id": "CUST-1132",
+    "merchant": "Walmart",
+    "amount": 12.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5283",
+    "customer_id": "CUST-1133",
+    "merchant": "Walmart",
+    "amount": 101.36,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5284",
+    "customer_id": "CUST-1134",
+    "merchant": "Uber",
+    "amount": 17.52,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5285",
+    "customer_id": "CUST-1135",
+    "merchant": "Starbucks",
+    "amount": 31.64,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5286",
+    "customer_id": "CUST-1136",
+    "merchant": "Starbucks",
+    "amount": 33.41,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5287",
+    "customer_id": "CUST-1137",
+    "merchant": "Target",
+    "amount": 25.07,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5288",
+    "customer_id": "CUST-1138",
+    "merchant": "Starbucks",
+    "amount": 55.9,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5289",
+    "customer_id": "CUST-1139",
+    "merchant": "Delta Airlines",
+    "amount": 26.16,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5290",
+    "customer_id": "CUST-1140",
+    "merchant": "Amazon",
+    "amount": 39.1,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5291",
+    "customer_id": "CUST-1141",
+    "merchant": "Amazon",
+    "amount": 161.27,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5292",
+    "customer_id": "CUST-1142",
+    "merchant": "Target",
+    "amount": 51.24,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5293",
+    "customer_id": "CUST-1143",
+    "merchant": "Delta Airlines",
+    "amount": 29.65,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5294",
+    "customer_id": "CUST-1144",
+    "merchant": "Delta Airlines",
+    "amount": 88.19,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5295",
+    "customer_id": "CUST-1145",
+    "merchant": "Amazon",
+    "amount": 90.5,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5296",
+    "customer_id": "CUST-1146",
+    "merchant": "Delta Airlines",
+    "amount": 33.64,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5297",
+    "customer_id": "CUST-1147",
+    "merchant": "Target",
+    "amount": 8.54,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5298",
+    "customer_id": "CUST-1148",
+    "merchant": "Walmart",
+    "amount": 51.3,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5299",
+    "customer_id": "CUST-1149",
+    "merchant": "Amazon",
+    "amount": 40.6,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5000",
+    "customer_id": "CUST-1000",
+    "merchant": "Delta Airlines",
+    "amount": 15.42,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5001",
+    "customer_id": "CUST-1001",
+    "merchant": "Amazon",
+    "amount": 89.04,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5002",
+    "customer_id": "CUST-1002",
+    "merchant": "Delta Airlines",
+    "amount": 9.29,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5003",
+    "customer_id": "CUST-1003",
+    "merchant": "Apple",
+    "amount": 16.93,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5004",
+    "customer_id": "CUST-1004",
+    "merchant": "Apple",
+    "amount": 66.89,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5005",
+    "customer_id": "CUST-1005",
+    "merchant": "Delta Airlines",
+    "amount": 182.79,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5006",
+    "customer_id": "CUST-1006",
+    "merchant": "Starbucks",
+    "amount": 65.14,
+    "timestamp": "2026-11-20T10:00:00Z"
+  },
+  {
+    "transaction_id": "TX-5007",
+    "customer_id": "CUST-1007",
+    "merchant": "Target",
+    "amount": 15.71,
+    "timestamp": "2026-11-20T10:00:00Z"
+  }
+]

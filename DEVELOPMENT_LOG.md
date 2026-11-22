@@ -9,14 +9,14 @@
 - Disk Space: Detected low free space on C:\ (~60MB), while D:\ has ~136GB. Cleaned `C:\Users\divya\AppData\Local\pip\cache` to immediately recover 1.39 GB of free space.
 - Pip flag: Using `--no-cache-dir` on pip installations to preserve host storage.
 
-### Architectural Decisions
-1. **Hybrid LLM Provider Architecture**:
-   - Primary: Groq API (`llama-3.3-70b-versatile` or `llama-3.1-8b-instant`) / OpenAI compatible endpoint.
-   - Deterministic Fallback: When no API key is configured or when rate limited, the system executes high-fidelity deterministic analytical agents so the entire LangGraph investigation graph runs smoothly and reliably without halting the platform.
-2. **Non-Destructive Remediation**:
-   - Original user uploads are strictly immutably stored with SHA-256 hashes.
-   - Any approved remediation creates an audited, newly versioned dataset copy with before-and-after metric comparisons.
-3. **Data Profiling & ML Detection**:
-   - Automated profiling evaluates null rates, unique cardinalities, distribution quantiles, and computes a standardized 100-point Data Quality Score.
-   - Isolation Forest detects multi-column anomalous records with transparent anomaly score metrics.
-   - Statistical two-sample Kolmogorov-Smirnov (KS) test and Population Stability Index (PSI) quantify numerical feature drift.
+### Architectural Decisions & Bug Fixes
+1. **JSON Serialization in SQLAlchemy**:
+   - Encountered `TypeError: Object of type bool_ is not JSON serializable` and `Timestamp is not JSON serializable` when inserting NumPy booleans/floats and Pandas Timestamps into JSON columns.
+   - Solution: Implemented `default_json_serializer` and configured `json_serializer=json_dumps_custom` on SQLAlchemy's `create_engine`, ensuring automatic, transparent coercion of all NumPy scalar types, arrays, and Pandas Timestamps to valid native Python JSON objects.
+2. **Multi-Format Remediation Copying**:
+   - Identified that remediated copies must match the source file format (JSON files saved as JSON, CSV as CSV, Excel as Excel) so subsequent automated profiling parses properly without MIME mismatches.
+   - Updated `IngestionService.load_dataframe` to smartly inspect both explicit type and file extension.
+3. **Cross-Dataset Baseline Drift Comparison**:
+   - Enhanced `DriftEngine.run_drift_analysis` to allow comparing two versions within a single dataset, as well as comparing an incoming dataset version against a separate baseline benchmark dataset.
+4. **Test Suite Verification**:
+   - 9 out of 9 pytest suites passed with 100% success rate across Authentication, Ingestion, Profiling, Isolation Forest, KS-Test & PSI Drift, LangGraph Multi-Agent, RAG, Incidents, and Human-in-the-Loop Remediation.
