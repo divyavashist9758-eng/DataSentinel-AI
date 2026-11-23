@@ -1,4 +1,4 @@
-﻿import os
+import os
 import json
 from pathlib import Path
 from typing import List, Union
@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "datasentinel-dev-secret-key-must-be-changed-in-production-123456"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60  # Standard enterprise session expiry (60 mins)
+    ADMIN_DEFAULT_PASSWORD: str = "admin123"
     
     # Database (PostgreSQL for production/docker, SQLite for lightweight zero-config local run)
     DATABASE_URL: str = "sqlite:///./datasentinel.db"
@@ -50,6 +51,13 @@ class Settings(BaseSettings):
         "https://datasentinel-frontend.onrender.com"
     ]
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def normalize_database_url(cls, v: str) -> str:
+        if isinstance(v, str) and v.startswith("postgres://"):
+            return v.replace("postgres://", "postgresql://", 1)
+        return v
+
     @field_validator("CORS_ORIGINS", mode="before")
     @classmethod
     def parse_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
@@ -77,6 +85,15 @@ class Settings(BaseSettings):
                 raise ValueError("CRITICAL SECURITY ERROR: Production deployment requires a secure, random SECRET_KEY >= 32 characters!")
         return v
 
+    @field_validator("ADMIN_DEFAULT_PASSWORD")
+    @classmethod
+    def validate_admin_password(cls, v: str) -> str:
+        env = os.environ.get("ENVIRONMENT", "development").lower()
+        if env == "production":
+            if not v or v.strip() == "admin123" or len(v.strip()) < 8:
+                raise ValueError("CRITICAL SECURITY ERROR: Production deployment requires a secure, non-default ADMIN_DEFAULT_PASSWORD (>= 8 characters)!")
+        return v
+
     model_config = {
         "env_file": ".env",
         "extra": "ignore",
@@ -93,5 +110,3 @@ settings.RAG_STORE_DIR = str(Path(settings.RAG_STORE_DIR).resolve())
 os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
 os.makedirs(settings.REMEDIATED_DIR, exist_ok=True)
 os.makedirs(settings.RAG_STORE_DIR, exist_ok=True)
-
-

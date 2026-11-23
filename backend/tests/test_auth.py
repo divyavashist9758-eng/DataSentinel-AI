@@ -3,6 +3,10 @@ def test_health_check(client):
     assert response.status_code == 200
     assert response.json()["status"] == "healthy"
 
+    # Test HEAD request
+    head_resp = client.head("/health")
+    assert head_resp.status_code == 200
+
 def test_user_registration_and_login(client):
     reg_payload = {
         "email": "jane@example.com",
@@ -15,7 +19,7 @@ def test_user_registration_and_login(client):
     assert reg_resp.status_code == 201
     assert reg_resp.json()["username"] == "janedoe"
 
-    # Test login with newly created user
+    # Test login with username_or_email key
     login_resp = client.post("/api/v1/auth/login", json={
         "username_or_email": "janedoe",
         "password": "SecurePassword123!"
@@ -23,6 +27,27 @@ def test_user_registration_and_login(client):
     assert login_resp.status_code == 200
     token = login_resp.json()["access_token"]
     assert len(token) > 20
+
+    # Test login with username key
+    login_user_resp = client.post("/api/v1/auth/login", json={
+        "username": "janedoe",
+        "password": "SecurePassword123!"
+    })
+    assert login_user_resp.status_code == 200
+
+    # Test login with email key
+    login_email_resp = client.post("/api/v1/auth/login", json={
+        "email": "jane@example.com",
+        "password": "SecurePassword123!"
+    })
+    assert login_email_resp.status_code == 200
+
+    # Test login via /api/auth/login route alias
+    login_alias_resp = client.post("/api/auth/login", json={
+        "username": "janedoe",
+        "password": "SecurePassword123!"
+    })
+    assert login_alias_resp.status_code == 200
 
     # Test /me endpoint
     me_resp = client.get("/api/v1/auth/me", headers={"Authorization": f"Bearer {token}"})

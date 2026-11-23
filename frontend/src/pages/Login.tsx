@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
+import { extractErrorMessage } from '../utils/error';
 import { ShieldCheck, ArrowRight, Lock, User as UserIcon } from 'lucide-react';
 
 export const Login: React.FC = () => {
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
+  const [password, setPassword] = useState(import.meta.env.DEV ? 'admin123' : '');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +24,7 @@ export const Login: React.FC = () => {
       login(data.access_token, data.user);
       navigate('/');
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Authentication failed. Please check credentials.');
+      setError(extractErrorMessage(err, 'Authentication failed. Please check credentials.'));
     } finally {
       setLoading(false);
     }

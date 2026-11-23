@@ -17,19 +17,14 @@ backend_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(backend_dir))
 
 from app.config import settings
-from app.core.database import Base, get_db, json_dumps_custom
+TEST_DB_URL = "sqlite:///./test_datasentinel.db"
+settings.DATABASE_URL = TEST_DB_URL
+settings.GROQ_API_KEY = ""
+settings.OPENAI_API_KEY = ""
+from app.core.database import Base, get_db, json_dumps_custom, engine as test_engine, SessionLocal as TestingSessionLocal
 from app.main import app
 from app.core.security import hash_password
 from app.models.user import User
-
-# Test database using a separate local sqlite database
-TEST_DB_URL = "sqlite:///./test_datasentinel.db"
-test_engine = create_engine(
-    TEST_DB_URL,
-    connect_args={"check_same_thread": False},
-    json_serializer=json_dumps_custom
-)
-TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_test_db():

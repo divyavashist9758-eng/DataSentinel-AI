@@ -1,5 +1,6 @@
 from datetime import timedelta
-from fastapi import APIRouter, Depends, HTTPException, status
+from typing import Optional
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 from app.config import settings
 from app.core.database import get_db
@@ -38,10 +39,14 @@ def register_user(user_in: UserCreate, db: Session = Depends(get_db)):
     return user
 
 @router.post("/login", response_model=Token)
-def login(login_data: UserLogin, db: Session = Depends(get_db)):
-    """Authenticate credentials and generate JWT token."""
+def login(
+    login_data: UserLogin,
+    db: Session = Depends(get_db)
+):
+    """Authenticate credentials and generate JWT token. Accepts username_or_email, username, or email."""
+    identifier = (login_data.username_or_email or "").strip()
     user = db.query(User).filter(
-        (User.username == login_data.username_or_email) | (User.email == login_data.username_or_email)
+        (User.username == identifier) | (User.email == identifier)
     ).first()
 
     if not user or not verify_password(login_data.password, user.hashed_password):
@@ -63,8 +68,8 @@ def get_current_user_profile(current_user: User = Depends(get_current_user)):
     """Retrieve authenticated user's profile."""
     return current_user
 
-@router.get("/health")
+@router.api_route("/health", methods=["GET", "HEAD"])
 def auth_health_check():
-    """Health probe endpoint under /api/v1/auth/health."""
+    """Health probe endpoint under /auth/health."""
     return {"status": "healthy", "service": "auth"}
 

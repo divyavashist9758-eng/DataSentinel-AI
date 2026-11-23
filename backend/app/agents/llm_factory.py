@@ -11,7 +11,7 @@ class LLMFactory:
         if settings.GROQ_API_KEY and len(settings.GROQ_API_KEY.strip()) > 5:
             try:
                 from groq import Groq
-                return Groq(api_key=settings.GROQ_API_KEY.strip())
+                return Groq(api_key=settings.GROQ_API_KEY.strip(), timeout=10.0)
             except Exception as e:
                 logger.warning(f"Could not initialize Groq client: {e}")
         return None

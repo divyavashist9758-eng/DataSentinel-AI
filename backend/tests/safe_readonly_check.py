@@ -6,7 +6,7 @@ Does NOT create, update, or delete any datasets, versions, users, or incidents.
 import sys
 import requests
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = sys.argv[1].rstrip("/") if len(sys.argv) > 1 else "http://127.0.0.1:8000"
 
 def run_safe_readonly_check():
     print("=" * 70)
@@ -21,7 +21,7 @@ def run_safe_readonly_check():
     # 1. Health check
     print("\n1. Verifying /health endpoint...")
     try:
-        r = session.get(f"{BASE_URL}/health", timeout=5)
+        r = session.get(f"{BASE_URL}/health", timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         data = r.json()
         assert data.get("status") == "healthy"
@@ -34,7 +34,7 @@ def run_safe_readonly_check():
     # 2. Auth Health check
     print("\n2. Verifying /api/v1/auth/health endpoint...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/auth/health", timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/auth/health", timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         data = r.json()
         assert data.get("status") == "healthy"
@@ -51,7 +51,7 @@ def run_safe_readonly_check():
         r = session.post(f"{BASE_URL}/api/v1/auth/login", json={
             "username_or_email": "admin",
             "password": "admin123"
-        }, timeout=5)
+        }, timeout=30)
         assert r.status_code == 200, f"Login failed: HTTP {r.status_code}"
         token = r.json().get("access_token")
         assert token, "No access_token returned"
@@ -70,7 +70,7 @@ def run_safe_readonly_check():
     # 4. User Profile Read-Only Check
     print("\n4. Verifying User Profile Retrieval (/api/v1/auth/me)...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/auth/me", headers=headers, timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/auth/me", headers=headers, timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         user_info = r.json()
         assert "username" in user_info and "role" in user_info
@@ -83,7 +83,7 @@ def run_safe_readonly_check():
     # 5. Dataset List (Read-Only)
     print("\n5. Verifying Dataset Query (/api/v1/datasets/)...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/datasets/", headers=headers, timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/datasets/", headers=headers, timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         datasets = r.json()
         results["Dataset List (Read)"] = "PASS"
@@ -95,7 +95,7 @@ def run_safe_readonly_check():
     # 6. Dashboard Telemetry Metrics (Read-Only)
     print("\n6. Verifying Dashboard Metrics (/api/v1/reports/dashboard/metrics)...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/reports/dashboard/metrics", headers=headers, timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/reports/dashboard/metrics", headers=headers, timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         metrics = r.json()
         assert "overall_health_score" in metrics
@@ -108,7 +108,7 @@ def run_safe_readonly_check():
     # 7. Incident Queries (Read-Only)
     print("\n7. Verifying Incident Registry (/api/v1/incidents/)...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/incidents/", headers=headers, timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/incidents/", headers=headers, timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         incidents = r.json()
         results["Incident Registry (Read)"] = "PASS"
@@ -120,7 +120,7 @@ def run_safe_readonly_check():
     # 8. RAG Knowledge Base (Read-Only)
     print("\n8. Verifying RAG Knowledge Base (/api/v1/rag/all)...")
     try:
-        r = session.get(f"{BASE_URL}/api/v1/rag/all", headers=headers, timeout=5)
+        r = session.get(f"{BASE_URL}/api/v1/rag/all", headers=headers, timeout=30)
         assert r.status_code == 200, f"HTTP {r.status_code}"
         kb = r.json()
         results["RAG Knowledge (Read)"] = "PASS"

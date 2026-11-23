@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/Layout';
 import { api } from '../services/api';
+import { extractErrorMessage } from '../utils/error';
 import {
   UploadCloud,
   FileSpreadsheet,
@@ -69,7 +70,7 @@ export const DatasetUpload: React.FC = () => {
         navigate(`/profiling?dataset_id=${res.id}`);
       }, 1500);
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Failed to ingest dataset. Ensure format is valid CSV, Excel, or JSON.');
+      setError(extractErrorMessage(err, 'Failed to ingest dataset. Ensure format is valid CSV, Excel, or JSON.'));
     } finally {
       setUploading(false);
     }

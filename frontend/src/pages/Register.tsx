@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { api } from '../services/api';
+import { extractErrorMessage } from '../utils/error';
 import { ShieldCheck, ArrowRight, Lock, User as UserIcon, Mail } from 'lucide-react';
 
 export const Register: React.FC = () => {
@@ -31,7 +32,7 @@ export const Register: React.FC = () => {
       setSuccess(true);
       setTimeout(() => navigate('/login'), 1500);
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Registration failed.');
+      setError(extractErrorMessage(err, 'Registration failed.'));
     } finally {
       setLoading(false);
     }

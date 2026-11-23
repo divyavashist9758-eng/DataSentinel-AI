@@ -20,17 +20,18 @@ async def lifespan(app: FastAPI):
     try:
         admin_user = db.query(User).filter(User.username == "admin").first()
         if not admin_user:
+            admin_pwd = getattr(settings, "ADMIN_DEFAULT_PASSWORD", "admin123")
             admin_user = User(
                 email="admin@datasentinel.ai",
                 username="admin",
                 full_name="System Administrator",
                 role="admin",
-                hashed_password=hash_password("admin123"),
+                hashed_password=hash_password(admin_pwd),
                 is_active=True
             )
             db.add(admin_user)
             db.commit()
-            logger.info("Created default system administrator account (admin / admin123).")
+            logger.info("Created default system administrator account (admin).")
     except Exception as e:
         logger.error(f"Error during database initialization: {e}")
     finally:
@@ -50,6 +51,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
+    allow_origin_regex=r"^https://datasentinel-frontend(-[a-zA-Z0-9_-]+)?\.onrender\.com$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -71,7 +73,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
         content={"detail": "An unexpected server error occurred. Please consult system logs.", "error": str(exc)}
     )
 
-@app.get("/health", tags=["Health"])
+@app.api_route("/health", methods=["GET", "HEAD"], tags=["Health"])
 def health_check():
     """System health inspection endpoint."""
     return {
@@ -81,6 +83,7 @@ def health_check():
         "environment": settings.ENVIRONMENT
     }
 
-# Mount API V1 routes
+# Mount API V1 routes and convenience /api alias
 app.include_router(api_router, prefix=settings.API_V1_STR)
+app.include_router(api_router, prefix="/api")
 
