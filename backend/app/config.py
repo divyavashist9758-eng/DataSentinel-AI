@@ -1,4 +1,4 @@
-import os
+﻿import os
 import json
 from pathlib import Path
 from typing import List, Union
@@ -46,7 +46,8 @@ class Settings(BaseSettings):
         "http://localhost:5173",
         "http://localhost:3000",
         "http://127.0.0.1:5173",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://datasentinel-frontend.onrender.com"
     ]
 
     @field_validator("CORS_ORIGINS", mode="before")
@@ -92,3 +93,5 @@ settings.RAG_STORE_DIR = str(Path(settings.RAG_STORE_DIR).resolve())
 os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
 os.makedirs(settings.REMEDIATED_DIR, exist_ok=True)
 os.makedirs(settings.RAG_STORE_DIR, exist_ok=True)
+
+
