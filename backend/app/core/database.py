@@ -1,4 +1,4 @@
-import json
+﻿import json
 import datetime
 import numpy as np
 import pandas as pd
@@ -28,8 +28,13 @@ connect_args = {}
 if settings.DATABASE_URL.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
 
+database_url = settings.DATABASE_URL
+
+if database_url.startswith("postgresql://"):
+    database_url = database_url.replace("postgresql://", "postgresql+psycopg2://", 1)
+
 engine = create_engine(
-    settings.DATABASE_URL,
+    database_url,
     connect_args=connect_args,
     json_serializer=json_dumps_custom,
     echo=False,
@@ -54,3 +59,5 @@ def init_db():
     logger.info("Initializing database schemas...")
     Base.metadata.create_all(bind=engine)
     logger.info("Database schemas initialized successfully.")
+
+
