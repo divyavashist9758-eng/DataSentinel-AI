@@ -162,6 +162,7 @@ DataSentinel AI/
 ├── docker-compose.yml
 ├── .dockerignore
 ├── .env.example
+├── DEPLOYMENT.md
 ├── ARCHITECTURE.md
 ├── TASKS.md
 ├── PROGRESS.md

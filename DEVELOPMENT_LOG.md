@@ -44,3 +44,8 @@
 4. **Production Deployment Documentation**:
    - Authored comprehensive `DEPLOYMENT.md` covering architecture, prerequisites, environment variables, PostgreSQL setup, local execution, and Docker Compose orchestration.
    - Recorded explicit compliance notice for "DO NOT DEPLOY" directive.
+5. **Safe Read-Only Live Verification & Smoke Test Audit**:
+   - Performed database write audit of `smoke_test_e2e.py`, cataloging all mutating operations.
+   - Authored and verified `safe_readonly_check.py` executing strictly non-destructive read operations against the live API server (health, auth health, token auth, user profile, dataset catalog, telemetry metrics, incidents, RAG knowledge). All 8 read-only checks passed (100%).
+   - Confirmed Docker Desktop / CLI absence on host environment (`docker` command not found); recorded status as NOT VERIFIED.
+   - Verified zero committed secrets, tokens, or `.env` files.
