@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 class DriftDetectionRequest(BaseModel):
     baseline_version_id: int
@@ -39,6 +39,5 @@ class DriftOut(BaseModel):
     schema_diff: Optional[SchemaDiffItem] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 

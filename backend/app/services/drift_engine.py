@@ -150,6 +150,19 @@ class DriftEngine:
                     if is_drifted:
                         drifted_count += 1
 
+                    baseline_dist = {
+                        "bins": dist_data.get("bins", []),
+                        "proportions": dist_data.get("baseline_proportions", []),
+                        "baseline_proportions": dist_data.get("baseline_proportions", []),
+                        "current_proportions": dist_data.get("current_proportions", [])
+                    }
+                    current_dist = {
+                        "bins": dist_data.get("bins", []),
+                        "proportions": dist_data.get("current_proportions", []),
+                        "baseline_proportions": dist_data.get("baseline_proportions", []),
+                        "current_proportions": dist_data.get("current_proportions", [])
+                    }
+
                     feature_metrics[col] = {
                         "column_name": col,
                         "feature_type": "numeric",
@@ -158,8 +171,8 @@ class DriftEngine:
                         "p_value": round(p_val, 6),
                         "psi_score": round(psi_score, 4),
                         "drift_level": drift_level,
-                        "baseline_distribution": dist_data,
-                        "current_distribution": dist_data
+                        "baseline_distribution": baseline_dist,
+                        "current_distribution": current_dist
                     }
                 else:
                     feature_metrics[col] = {
@@ -225,8 +238,14 @@ class DriftEngine:
         if not v_base or not v_curr:
             raise ValueError("Baseline or current dataset version not found")
 
-        base_df = IngestionService.load_dataframe(v_base.file_path, dataset.file_type)
-        curr_df = IngestionService.load_dataframe(v_curr.file_path, dataset.file_type)
+        base_dataset = v_base.dataset if hasattr(v_base, "dataset") and v_base.dataset else dataset
+        curr_dataset = v_curr.dataset if hasattr(v_curr, "dataset") and v_curr.dataset else dataset
+
+        base_file_type = base_dataset.file_type if base_dataset else dataset.file_type
+        curr_file_type = curr_dataset.file_type if curr_dataset else dataset.file_type
+
+        base_df = IngestionService.load_dataframe(v_base.file_path, base_file_type)
+        curr_df = IngestionService.load_dataframe(v_curr.file_path, curr_file_type)
 
         analysis = cls.analyze_drift(base_df, curr_df, p_val_threshold, psi_threshold)
 

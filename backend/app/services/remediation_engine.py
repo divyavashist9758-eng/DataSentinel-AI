@@ -155,7 +155,7 @@ class RemediationEngine:
         if dataset.file_type == "json":
             safe_filename = f"remediated_ds{dataset.id}_v{new_ver_num}_{uuid.uuid4().hex[:8]}.json"
             remediated_path = os.path.join(settings.REMEDIATED_DIR, safe_filename)
-            clean_df.to_json(remediated_path, orient="records", indent=2)
+            clean_df.to_json(remediated_path, orient="records", indent=2, date_format="iso")
         elif dataset.file_type == "excel":
             safe_filename = f"remediated_ds{dataset.id}_v{new_ver_num}_{uuid.uuid4().hex[:8]}.xlsx"
             remediated_path = os.path.join(settings.REMEDIATED_DIR, safe_filename)
@@ -181,7 +181,7 @@ class RemediationEngine:
         # Update Remediation record
         rem.status = "EXECUTED"
         rem.reviewed_by = reviewer_name
-        rem.reviewed_at = datetime.datetime.utcnow()
+        rem.reviewed_at = datetime.datetime.now(datetime.timezone.utc)
         rem.execution_result = {
             "new_version_id": new_version.id,
             "new_version_num": new_ver_num,

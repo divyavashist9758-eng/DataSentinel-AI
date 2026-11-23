@@ -1,7 +1,7 @@
 """
 DataSentinel AI: Comprehensive Independent Verification Suite
 Executes full end-to-end integration across all 12 modules:
-1. Auth & Security (Salted SHA-256, JWT Token)
+1. Auth & Security (Argon2id, JWT Token)
 2. Ingestion & Storage (CSV, JSON, Hash verification, Row/Col counts)
 3. Profiling & Scoring (100-Point Transparent Quality Score)
 4. ML Anomaly Detection (Scikit-Learn Isolation Forest & Outliers)
@@ -109,7 +109,7 @@ def run_independent_verification():
         assert me_resp.json()["email"] == "lead_verifier@datasentinel.ai"
 
         results["1. Auth & Security"] = "PASS"
-        print("  -> PASS: Salted SHA-256, registration, JWT login, and profile verified.")
+        print("  -> PASS: Argon2id password hashing, registration, JWT login, and profile verified.")
     except Exception as e:
         results["1. Auth & Security"] = f"FAIL: {e}"
         print(f"  -> FAIL: {e}\n{traceback.format_exc()}")

@@ -117,8 +117,10 @@ export const DriftMonitoring: React.FC = () => {
   const getDistributionComparisonData = (metric: FeatureDriftMetric) => {
     if (!metric.baseline_distribution?.bins) return [];
     const bins = metric.baseline_distribution.bins;
-    const baseP = metric.baseline_distribution.baseline_proportions;
-    const currP = metric.baseline_distribution.current_proportions;
+    const baseP = metric.baseline_distribution.proportions || metric.baseline_distribution.baseline_proportions;
+    const currP = metric.current_distribution?.proportions || metric.baseline_distribution.current_proportions;
+
+    if (!baseP || !currP) return [];
 
     return baseP.map((bp: number, i: number) => ({
       bin: bins[i] != null ? `${bins[i]} - ${bins[i + 1] || ''}` : `Bin ${i + 1}`,

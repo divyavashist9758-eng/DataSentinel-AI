@@ -14,7 +14,7 @@ class EntityNotFoundException(DataSentinelException):
 class ValidationException(DataSentinelException):
     def __init__(self, detail: str):
         super().__init__(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            status_code=getattr(status, "HTTP_422_UNPROCESSABLE_CONTENT", 422),
             detail=detail
         )
 

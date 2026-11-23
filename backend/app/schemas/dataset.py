@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional, List, Any, Dict
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 class DatasetSchemaOut(BaseModel):
     id: int
@@ -10,8 +10,7 @@ class DatasetSchemaOut(BaseModel):
     unique_count: int
     sample_values: Optional[List[Any]] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class DatasetVersionOut(BaseModel):
     id: int
@@ -25,8 +24,7 @@ class DatasetVersionOut(BaseModel):
     created_at: datetime
     schemas: List[DatasetSchemaOut] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class DatasetOut(BaseModel):
     id: int
@@ -45,8 +43,7 @@ class DatasetOut(BaseModel):
     latest_quality_score: Optional[float] = None
     versions_count: Optional[int] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class DatasetDetailOut(DatasetOut):
     versions: List[DatasetVersionOut] = []

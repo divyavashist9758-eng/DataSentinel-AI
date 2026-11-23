@@ -58,7 +58,7 @@ def review_remediation(
     rem.status = "APPROVED" if action_upper == "APPROVE" else "REJECTED"
     rem.reviewed_by = current_user.username
     import datetime
-    rem.reviewed_at = datetime.datetime.utcnow()
+    rem.reviewed_at = datetime.datetime.now(datetime.timezone.utc)
 
     record_audit(
         db=db,

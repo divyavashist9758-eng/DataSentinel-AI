@@ -23,7 +23,7 @@ def create_incident(
     if not dataset:
         raise EntityNotFoundException("Dataset", req.dataset_id)
 
-    now_iso = datetime.datetime.utcnow().isoformat()
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
     timeline = [{
         "timestamp": now_iso,
         "event": "INCIDENT_CREATED",
@@ -111,7 +111,7 @@ def update_incident(
         raise EntityNotFoundException("Incident", incident_id)
 
     timeline = list(inc.timeline or [])
-    now_iso = datetime.datetime.utcnow().isoformat()
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     if req.status and req.status.upper() != inc.status:
         old_status = inc.status

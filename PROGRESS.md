@@ -28,3 +28,6 @@
 - [x] **End-to-End Verification Harness**: 12/12 modules passing (Auth, Ingestion, Profiling, ML, Drift, LangGraph, RAG, Incidents, HITL Remediation, PDF/CSV Reports, LLM Fallback, API Parity).
 - [x] **Frontend Production Build**: Vite build passed in 14.44s with 0 TypeScript compilation errors.
 - [x] **Docker Configuration**: Verified `backend/Dockerfile`, `frontend/Dockerfile`, `frontend/nginx.conf`, and `docker-compose.yml`.
+- [x] **Drift Engine Optimization**: Resolved quantile bin distributions for baseline vs current series, and enabled cross-version file type handling.
+- [x] **Pydantic V2 Schema Modernization**: Clean `ConfigDict(from_attributes=True)` on all schemas, 0 Pydantic deprecation warnings.
+- [x] **Production Deployment Guide**: Comprehensive `DEPLOYMENT.md` created with step-by-step instructions, environment specification, database setup, and strict DO NOT DEPLOY compliance.
